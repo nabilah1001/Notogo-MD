@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Notogo_App</string>
+    <string name="illustration">illustration</string>
+    <string name="header">Life Goals Planner</string>
+    <string name="subheader">Plan your goals and make it happen🌈</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
 </resources>
