@@ -2,6 +2,7 @@ package com.dicoding.picodiploma.notogo_app
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,11 +39,11 @@ class Onboarding : AppCompatActivity() {
 
     private fun setupAction() {
         binding.loginButton.setOnClickListener {
-//            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         binding.signupButton.setOnClickListener {
-//            startActivity(Intent(this, SignupActivity::class.java))
+            startActivity(Intent(this, SignupActivity::class.java))
         }
     }
 

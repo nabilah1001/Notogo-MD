@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailTravel">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imagecategory"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars"
+                android:contentDescription="imagecategory"/>
+
+            <TextView
+                android:id="@+id/tv_detail_wisata"
+                android:layout_width="255dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/ppsemibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imagecategory"
+                tools:text="@string/nametravel" />
+
+            <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/toggle_favorite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/fav_toggle"
+                android:focusable="false"
+                android:foregroundGravity="bottom"
+                android:textOff=""
+                android:textOn=""
+                app:fabSize="normal"
+                app:layout_anchorGravity="bottom|end"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_detail_wisata"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_detail_wisata"
+                app:layout_constraintTop_toTopOf="@+id/tv_detail_wisata" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:fontFamily="@font/ppmedium"
+                app:drawableStartCompat="@drawable/ic_location"
+                tools:text="Location"
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_wisata"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_wisata"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

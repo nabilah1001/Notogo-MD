@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPreferencesActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/ppbold"
+        android:text="@string/texthead"
+        android:textAlignment="center"
+        android:textColor="@color/blue_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/ppregular"
+        android:text="@string/textsubhead"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/getStartedButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descTextView">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            style="@style/Widget.MaterialComponents.Chip.Filter">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBeach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/beach" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMountain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mountain" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lake" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipZoo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zoo" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/river" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWaterPark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/water_park" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCultural"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cultural_heritage" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAmusementPark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amusement_park" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWaterfall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/waterfall" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipArtGal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/art_gallery" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mall" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMonument"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/monument_museum" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipReligiousPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religious_place" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipOutbound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/outbound" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCulinary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/culinary" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipShopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shopping" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPhotoHunt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photo_hunting" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSightSeeing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sight_seeing" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/ppmedium"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_filled"
+        android:text="@string/get_started"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

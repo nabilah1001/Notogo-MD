@@ -12,4 +12,8 @@
 
     <color name="red_1">#E63946</color>
 
+    <color name="blackpure">#000000</color>
+
+    <color name="transparent">#00000000 </color>
+
 </resources>

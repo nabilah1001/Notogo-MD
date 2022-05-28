@@ -19,7 +19,6 @@
         android:contentDescription="@string/illustration"/>
 
     <TextView
-        android:alpha="0"
         android:id="@+id/titleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,18 +26,16 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:text="@string/header"
-        android:textColor="@color/black"
         android:fontFamily="@font/ppbold"
+        android:textColor="@color/blue_1"
         android:textSize="30sp"
         android:textAlignment="center"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
     <TextView
-        android:alpha="0"
         android:id="@+id/descTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,7 +44,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/subheader"
         android:fontFamily="@font/ppregular"
-        android:textColor="@color/black"
+        android:textColor="@color/blackpure"
         android:textSize="15sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,31 +53,34 @@
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
     <Button
-        android:alpha="0"
         android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
-        android:backgroundTint="@color/black"
         android:text="@string/login"
         android:fontFamily="@font/ppmedium"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_filled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descTextView" />
 
     <Button
         android:id="@+id/signupButton"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="50dp"
-        android:alpha="0"
-        android:textColor="@color/black"
         android:text="@string/signup"
         android:fontFamily="@font/ppmedium"
+        android:textSize="18sp"
+        android:textColor="@color/blue_1"
+        android:background="@drawable/btn_outlined"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
