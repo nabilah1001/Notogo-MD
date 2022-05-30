@@ -51,116 +51,299 @@
             android:id="@+id/chipGroup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            style="@style/Widget.MaterialComponents.Chip.Filter">
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipBeach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+
                 android:text="@string/beach" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipMountain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/mountain" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipLake"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/lake" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipZoo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/zoo" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipRiver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/river" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipWaterPark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/water_park" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipCultural"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/cultural_heritage" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAmusementPark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/amusement_park" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipWaterfall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/waterfall" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipArtGal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/art_gallery" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipMall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/mall" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipMonument"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/monument_museum" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipReligiousPlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/religious_place" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipOutbound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/outbound" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipCulinary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/culinary" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipShopping"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/shopping" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipPhotoHunt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/photo_hunting" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSightSeeing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
                 android:text="@string/sight_seeing" />
 
         </com.google.android.material.chip.ChipGroup>

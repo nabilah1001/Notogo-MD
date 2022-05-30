@@ -44,6 +44,7 @@ class UserPreferencesActivity : AppCompatActivity() {
     private fun selectChip() {
         binding.apply {
 
+
         }
 
     }
