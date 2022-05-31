@@ -47,9 +47,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
@@ -83,13 +83,22 @@
                     android:textSize="18sp"
                     tools:ignore="HardcodedText" />
 
-                <TextView
+                <Button
+                    android:id="@+id/favoriteButton"
+                    style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/ppmedium"
                     android:text="Favorite"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/ppregular"
-                    tools:ignore="HardcodedText" />
+                    android:textSize="13sp"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Favorite"-->
+<!--                    android:textSize="13sp"-->
+<!--                    android:fontFamily="@font/ppregular"-->
+<!--                    tools:ignore="HardcodedText" />-->
 
             </LinearLayout>
 
@@ -110,13 +119,22 @@
                     android:fontFamily="@font/ppsemibold"
                     tools:ignore="HardcodedText" />
 
-                <TextView
+                <Button
+                    android:id="@+id/goalsButton"
+                    style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/ppmedium"
                     android:text="Goals"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/ppregular"
-                    tools:ignore="HardcodedText" />
+                    android:textSize="13sp"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Goals"-->
+<!--                    android:textSize="13sp"-->
+<!--                    android:fontFamily="@font/ppregular"-->
+<!--                    tools:ignore="HardcodedText" />-->
 
             </LinearLayout>
 
@@ -137,13 +155,22 @@
                     android:fontFamily="@font/ppsemibold"
                     tools:ignore="HardcodedText"/>
 
-                <TextView
+                <Button
+                    android:id="@+id/historyButton"
+                    style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/ppmedium"
                     android:text="History"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/ppregular"
-                    tools:ignore="HardcodedText"/>
+                    android:textSize="13sp"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="History"-->
+<!--                    android:textSize="13sp"-->
+<!--                    android:fontFamily="@font/ppregular"-->
+<!--                    tools:ignore="HardcodedText"/>-->
 
             </LinearLayout>
         </LinearLayout>
@@ -156,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="25dp"
         android:text="Setting"
         android:textSize="18sp"
         android:fontFamily="@font/ppsemibold"
@@ -273,15 +300,17 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/logoutButton"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/logout"
-        android:fontFamily="@font/ppsemibold"
+        android:fontFamily="@font/ppmedium"
         android:textSize="18sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_filled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_view3" />
