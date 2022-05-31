@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_bucket">
+
+    <fragment
+        android:id="@+id/navigation_bucket"
+        android:name="com.dicoding.picodiploma.notogo_app.bucket.BucketFragment"
+        android:label="@string/bucket_list"
+        tools:layout="@layout/fragment_bucket" />
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.dicoding.picodiploma.notogo_app.add.AddFragment"
+        android:label="@string/add_bucket"
+        tools:layout="@layout/fragment_add" />
+
+    <fragment
+        android:id="@+id/navigation_recommendation"
+        android:name="com.dicoding.picodiploma.notogo_app.recommend.RecommendFragment"
+        android:label="@string/view_recommend"
+        tools:layout="@layout/fragment_recommend" />
+</navigation>

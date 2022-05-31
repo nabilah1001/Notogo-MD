@@ -6,7 +6,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountActivity">
+    tools:context=".account.AccountActivity">
 
     <ImageView
         android:id="@+id/iv_profile"
@@ -16,15 +16,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"
-        tools:ignore="ContentDescription" />
+        android:src="@drawable/ic_person"/>
+<!--        tools:src="@tools:sample/avatars"-->
+<!--        tools:ignore="ContentDescription" -->
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:text="Jamal"
+        android:text="Jamal"
         android:textSize="18sp"
         android:fontFamily="@font/ppsemibold"
         app:layout_constraintEnd_toEndOf="@+id/iv_profile"
@@ -36,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:text="jamal@gmail.com"
+        android:text="jamal@gmail.com"
         android:textSize="15sp"
         android:fontFamily="@font/ppregular"
         app:layout_constraintEnd_toEndOf="@+id/tv_name"

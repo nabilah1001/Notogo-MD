@@ -16,17 +16,17 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imagecategory"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
+                android:contentDescription="imagecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars"
-                android:contentDescription="imagecategory"/>
+                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/tv_detail_wisata"
@@ -34,8 +34,8 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="16dp"
-                android:textSize="25sp"
                 android:fontFamily="@font/ppsemibold"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imagecategory"
                 tools:text="@string/nametravel" />
@@ -54,7 +54,6 @@
                 app:layout_anchorGravity="bottom|end"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_detail_wisata"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_detail_wisata"
                 app:layout_constraintTop_toTopOf="@+id/tv_detail_wisata" />
 
             <TextView
@@ -63,14 +62,58 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/ppmedium"
                 android:gravity="center_vertical"
                 android:textSize="15sp"
-                android:fontFamily="@font/ppmedium"
                 app:drawableStartCompat="@drawable/ic_location"
-                tools:text="Location"
                 app:layout_constraintStart_toStartOf="@+id/tv_detail_wisata"
-                app:layout_constraintTop_toBottomOf="@+id/tv_detail_wisata"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_wisata"
+                tools:text="Location" />
 
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBeach"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/beach"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@drawable/chip"
+                    app:chipCornerRadius="10dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMountain"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/mountain"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@drawable/chip"
+                    app:chipCornerRadius="10dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+            </com.google.android.material.chip.ChipGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

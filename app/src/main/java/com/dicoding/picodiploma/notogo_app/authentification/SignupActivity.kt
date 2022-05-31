@@ -1,17 +1,14 @@
-package com.dicoding.picodiploma.notogo_app
+package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.Toast
 import com.dicoding.picodiploma.notogo_app.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {

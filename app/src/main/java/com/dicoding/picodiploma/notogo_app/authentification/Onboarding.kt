@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.notogo_app
+package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator

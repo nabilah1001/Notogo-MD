@@ -14,31 +14,37 @@
         android:theme="@style/Theme.Notogo_App"
         tools:targetApi="31">
         <activity
+            android:name=".recommend.RecommendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".add.AddActivity"
+            android:exported="false" />
+        <activity
             android:name=".History"
             android:exported="false" />
         <activity
             android:name=".Favorite"
             android:exported="false" />
         <activity
-            android:name=".AccountActivity"
+            android:name=".account.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".DetailTravel"
             android:exported="false" />
         <activity
-            android:name=".UserPreferencesActivity"
+            android:name=".authentification.UserPreferencesActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".authentification.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".authentification.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Onboarding"
+            android:name=".authentification.Onboarding"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
