@@ -14,10 +14,12 @@ class RecommendFragment : Fragment() {
     private var _binding: FragmentRecommendBinding? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_recommend, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
+            : View? {
+
+        // inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_recommend, container, false)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

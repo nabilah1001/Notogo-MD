@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".add.AddActivity">
 
-
     <EditText
         android:id="@+id/et_title"
         android:layout_width="match_parent"
@@ -16,9 +15,8 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/form_template"
         android:ems="10"
+        android:hint="Title"
         android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:text="Title"
         android:textColor="@color/blue_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,27 +36,17 @@
         app:layout_constraintTop_toBottomOf="@+id/et_category"
         app:startIconDrawable="@drawable/ic_calendar"/>
 
-    <ImageView
-        android:id="@+id/img_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/et_title"
-        app:layout_constraintStart_toStartOf="@+id/et_title"
-        app:layout_constraintTop_toBottomOf="@+id/et_title"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <Button
         android:id="@+id/btn_image"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white_2"
         android:text="Input File"
         android:textColor="@color/grey_1"
-        app:layout_constraintEnd_toEndOf="@+id/img_input"
-        app:layout_constraintStart_toStartOf="@+id/img_input"
-        app:layout_constraintTop_toBottomOf="@+id/img_input" />
+        app:layout_constraintEnd_toEndOf="@+id/et_title"
+        app:layout_constraintStart_toStartOf="@+id/et_title"
+        app:layout_constraintTop_toBottomOf="@+id/et_title" />
 
     <EditText
         android:id="@+id/et_note"
@@ -68,9 +56,8 @@
         android:background="@drawable/form_template"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Notes"
         android:inputType="textMultiLine"
-        android:paddingStart="10dp"
-        android:text="Notes :"
         android:textColor="@color/blue_1"
         app:layout_constraintEnd_toEndOf="@+id/btn_image"
         app:layout_constraintStart_toStartOf="@+id/btn_image"
@@ -127,6 +114,5 @@
         app:layout_constraintEnd_toEndOf="@+id/et_budget"
         app:layout_constraintStart_toStartOf="@+id/et_budget"
         app:layout_constraintTop_toBottomOf="@+id/et_budget" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
