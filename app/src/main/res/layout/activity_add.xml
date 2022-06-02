@@ -6,13 +6,127 @@
     android:layout_height="match_parent"
     tools:context=".add.AddActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Goals"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:text="Title"
+        android:textColor="@color/blue_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:hint="DD-MM-YYYY"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/et_category"
+        app:layout_constraintStart_toStartOf="@+id/et_category"
+        app:layout_constraintTop_toBottomOf="@+id/et_category"
+        app:startIconDrawable="@drawable/ic_calendar"/>
+
+    <ImageView
+        android:id="@+id/img_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_title"
+        app:layout_constraintStart_toStartOf="@+id/et_title"
+        app:layout_constraintTop_toBottomOf="@+id/et_title"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btn_image"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white_2"
+        android:text="Input File"
+        android:textColor="@color/grey_1"
+        app:layout_constraintEnd_toEndOf="@+id/img_input"
+        app:layout_constraintStart_toStartOf="@+id/img_input"
+        app:layout_constraintTop_toBottomOf="@+id/img_input" />
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:paddingStart="10dp"
+        android:text="Notes :"
+        android:textColor="@color/blue_1"
+        app:layout_constraintEnd_toEndOf="@+id/btn_image"
+        app:layout_constraintStart_toStartOf="@+id/btn_image"
+        app:layout_constraintTop_toBottomOf="@+id/btn_image" />
+
+    <EditText
+        android:id="@+id/et_category"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:hint="Category"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/et_note"
+        app:layout_constraintStart_toStartOf="@+id/et_note"
+        app:layout_constraintTop_toBottomOf="@+id/et_note"
+        app:startIconDrawable="@drawable/ic_category"/>
+
+    <EditText
+        android:id="@+id/et_reminder"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:hint="Reminder"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/et_date"
+        app:layout_constraintStart_toStartOf="@+id/et_date"
+        app:layout_constraintTop_toBottomOf="@+id/et_date"
+        app:startIconDrawable="@drawable/ic_alarm"/>
+
+    <EditText
+        android:id="@+id/et_budget"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_template"
+        android:ems="10"
+        android:hint="Budget"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/et_reminder"
+        app:layout_constraintStart_toStartOf="@+id/et_reminder"
+        app:layout_constraintTop_toBottomOf="@+id/et_reminder"
+        app:startIconDrawable="@drawable/ic_budget"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/et_budget"
+        app:layout_constraintStart_toStartOf="@+id/et_budget"
+        app:layout_constraintTop_toBottomOf="@+id/et_budget" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

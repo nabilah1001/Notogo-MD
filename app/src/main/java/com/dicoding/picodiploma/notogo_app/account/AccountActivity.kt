@@ -3,15 +3,11 @@ package com.dicoding.picodiploma.notogo_app.account
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.picodiploma.notogo_app.Favorite
-import com.dicoding.picodiploma.notogo_app.History
+import com.dicoding.picodiploma.notogo_app.recommend.Favorite
+import com.dicoding.picodiploma.notogo_app.bucket.History
 import com.dicoding.picodiploma.notogo_app.MainActivity
-import com.dicoding.picodiploma.notogo_app.R
 import com.dicoding.picodiploma.notogo_app.authentification.Onboarding
-import com.dicoding.picodiploma.notogo_app.authentification.SignupActivity
-import com.dicoding.picodiploma.notogo_app.authentification.UserPreferencesActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityAccountBinding
-import com.dicoding.picodiploma.notogo_app.databinding.ActivityLoginBinding
 
 class AccountActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAccountBinding

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_list"
+    <item android:id="@+id/navigation_bucket"
         android:icon="@drawable/ic_list"
-        android:title="Bucket List"/>
+        android:title="@string/bucket_list"/>
 
-    <item android:id="@+id/placeholder"
-        android:title="" />
+    <item android:id="@+id/navigation_add"
+        android:icon="@drawable/ic_add_circle"
+        android:title="@string/add_goal"/>
 
-    <item android:id="@+id/menu_recommend"
+    <item android:id="@+id/navigation_recommend"
         android:icon="@drawable/ic_maps"
-        android:title="Recommend"/>
+        android:title="@string/recommend"/>
 
 </menu>

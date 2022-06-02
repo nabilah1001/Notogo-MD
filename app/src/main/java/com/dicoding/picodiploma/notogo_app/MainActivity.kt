@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.dicoding.picodiploma.notogo_app.account.AccountActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,9 +23,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        bottom_navbar.background = null
-        bottom_navbar.menu.getItem(1).isEnabled = false
+        val navView: BottomNavigationView = binding.navBottom
 
+        val navController = findNavController(R.id.nav_host_main)
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.navigation_bucket, R.id.navigation_add, R.id.navigation_recommend
+        ).build()
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
  }
 
     // Option Menu
@@ -35,7 +45,6 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_account -> {
                 val intent = Intent(this@MainActivity, AccountActivity::class.java)
                 startActivity(intent)
-                true
             }
         }
         return super.onOptionsItemSelected(item)

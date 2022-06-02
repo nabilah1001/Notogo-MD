@@ -38,10 +38,17 @@
     <string name="logout">Logout</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bucket_list">Bucket List</string>
-    <string name="add_bucket">Add Bucket</string>
-    <string name="view_recommend">Recommend</string>
+    <string name="add_goal">Add Goal</string>
+    <string name="recommend">Recommend</string>
     <string name="liburan_semester_akhir">Liburan Semester Akhir</string>
     <string name="_21_juli_2022">21 Juli 2022</string>
     <string name="sample">Suhu udara 15℃ terutama di sore hari. Termasuk gunung aktif, \n maka banyak uap asap berbau belerang.</string>
     <string name="addtomybucket">Add to my bucket</string>
+
+    <string name="your_list">Your List</string>
+    <string name="goals">Goals</string>
+    <string name="desc_image_recommend">image_travel</string>
+    <string name="sample_location">Gunung Papandayan</string>
+    <string name="link_travel_goal">Travel Goal</string>
+    <string name="link_custom_goal">Custom Goal</string>
 </resources>
