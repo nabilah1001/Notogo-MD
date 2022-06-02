@@ -17,8 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_person"/>
-<!--        tools:src="@tools:sample/avatars"-->
-<!--        tools:ignore="ContentDescription" -->
 
     <TextView
         android:id="@+id/tv_name"
@@ -48,8 +46,8 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
@@ -182,8 +180,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="15dp"
         android:text="Setting"
         android:textSize="18sp"
         android:fontFamily="@font/ppsemibold"
@@ -209,7 +207,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="15dp"
+            android:padding="5dp"
             tools:ignore="DisableBaselineAlignment">
 
             <LinearLayout
@@ -218,30 +216,51 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/languageButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="375dp"
                     android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/ppregular"
                     android:text="Language"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/ppsemibold"
-                    tools:ignore="HardcodedText" />
+                    android:drawableRight="@drawable/ic_arrow_right"
+                    android:textSize="15sp"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Language"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:fontFamily="@font/ppsemibold"-->
+<!--                    tools:ignore="HardcodedText" />-->
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="right"-->
+<!--                android:orientation="vertical">-->
 
-                <ImageButton
-                    android:id="@+id/arr"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_arrow_right"/>
+<!--                <Button-->
+<!--                    android:id="@+id/arrButton"-->
+<!--                    style="@style/Widget.Material3.Button.TextButton"-->
+<!--                    android:layout_width="185dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:fontFamily="@font/ppregular"-->
+<!--                    app:icon="@drawable/ic_arrow_right"-->
+<!--                    android:textSize="15sp"/>-->
 
-            </LinearLayout>
+<!--&lt;!&ndash;                <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/arr"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:background="@drawable/ic_arrow_right" />&ndash;&gt;-->
+
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
@@ -288,6 +307,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dark Mode"
+                    android:textColor="@color/blue_1"
                     android:fontFamily="@font/ppregular"
                     android:textSize="15sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -303,9 +323,9 @@
         android:id="@+id/logoutButton"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/logout"
         android:fontFamily="@font/ppmedium"
         android:textSize="18sp"

@@ -14,8 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-<!--    <style name="chipTextAppearance" parent="TextAppearance.MaterialComponents.Chip">-->
-<!--        <item name="android:textSize">15sp</item>-->
-<!--        <item name="android:fontFamily">@font/ppsemibold</item>-->
-<!--    </style>-->
 </resources>
