@@ -51,4 +51,9 @@
     <string name="sample_location">Gunung Papandayan</string>
     <string name="link_travel_goal">Travel Goal</string>
     <string name="link_custom_goal">Custom Goal</string>
+
+    <string name="register_success">Register success</string>
+    <string name="register_fail">Register failed</string>
+    <string name="login_success">Login success</string>
+    <string name="login_fail">Login failed</string>
 </resources>

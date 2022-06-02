@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.dicoding.picodiploma.notogo_app.authentification.login.LoginActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
