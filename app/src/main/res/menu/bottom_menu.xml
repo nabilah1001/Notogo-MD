@@ -5,9 +5,8 @@
         android:icon="@drawable/ic_list"
         android:title="@string/bucket_list"/>
 
-    <item android:id="@+id/navigation_add"
-        android:icon="@drawable/ic_add_circle"
-        android:title="@string/add_goal"/>
+    <item android:id="@+id/navigation_space"
+        android:title=""/>
 
     <item android:id="@+id/navigation_recommend"
         android:icon="@drawable/ic_maps"

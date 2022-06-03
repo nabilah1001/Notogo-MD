@@ -8,18 +8,16 @@
     <fragment
         android:id="@+id/navigation_bucket"
         android:name="com.dicoding.picodiploma.notogo_app.bucket.BucketFragment"
-        android:label="Bucket List"
+        android:label="@string/bucket_list"
         tools:layout="@layout/fragment_bucket" />
 
     <fragment
-        android:id="@+id/navigation_add"
-        android:name="com.dicoding.picodiploma.notogo_app.add.AddFragment"
-        android:label="Add Goal"
-        tools:layout="@layout/fragment_add" />
+        android:id="@+id/navigation_space"
+        android:label="Space"/>
 
     <fragment
         android:id="@+id/navigation_recommend"
         android:name="com.dicoding.picodiploma.notogo_app.recommend.RecommendFragment"
-        android:label="Recommend"
+        android:label="@string/recommend"
         tools:layout="@layout/fragment_recommend" />
 </navigation>

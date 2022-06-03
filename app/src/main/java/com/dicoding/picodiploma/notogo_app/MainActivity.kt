@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.dicoding.picodiploma.notogo_app.account.AccountActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,16 +24,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        nav_bottom.background = null
+        nav_bottom.menu.getItem(1).isEnabled = false
+
         val navView: BottomNavigationView = binding.navBottom
 
         val navController = findNavController(R.id.nav_host_main)
         val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_bucket, R.id.navigation_add, R.id.navigation_recommend
+            R.id.navigation_bucket, R.id.navigation_space, R.id.navigation_recommend
         ).build()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
- }
+    }
 
     // Option Menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
