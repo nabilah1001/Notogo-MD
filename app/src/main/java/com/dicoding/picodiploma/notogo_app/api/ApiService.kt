@@ -1,4 +1,4 @@
-package com.haniifah.submission.storyapp.api
+package com.dicoding.picodiploma.notogo_app.api
 
 import com.dicoding.picodiploma.notogo_app.model.LoginResponse
 import com.dicoding.picodiploma.notogo_app.model.SignupResponse

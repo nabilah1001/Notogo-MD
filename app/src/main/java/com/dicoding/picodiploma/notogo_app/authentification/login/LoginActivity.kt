@@ -1,9 +1,8 @@
 package com.dicoding.picodiploma.notogo_app.authentification.login
 
-import android.Manifest
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -21,12 +20,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.dicoding.picodiploma.notogo_app.MainActivity
 import com.dicoding.picodiploma.notogo_app.R
 import com.dicoding.picodiploma.notogo_app.ViewModelFactory
-import com.dicoding.picodiploma.notogo_app.authentification.UserPreferencesActivity
+import com.dicoding.picodiploma.notogo_app.authentification.SignupActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityLoginBinding
 import com.dicoding.picodiploma.notogo_app.model.LoginResponse
 import com.dicoding.picodiploma.notogo_app.model.User
 import com.dicoding.picodiploma.notogo_app.model.UserPreference
-import com.haniifah.submission.storyapp.api.ApiConfig
+import com.dicoding.picodiploma.notogo_app.api.ApiConfig
+import com.dicoding.picodiploma.notogo_app.authentification.UserPreferencesActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,63 +47,22 @@ class LoginActivity : AppCompatActivity() {
         binding.passwordEditText.type = "password"
 
         binding.loginButton.setOnClickListener {
+            startActivity(Intent(this, UserPreferencesActivity::class.java))
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
             login(email, password)
         }
+
+        binding.signupButton.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+        }
+
         setupView()
         setupViewModel()
         playAnimation()
     }
 
-//    private fun setupAction() {
-//        binding.loginButton.setOnClickListener {
-//            startActivity(Intent(this, UserPreferencesActivity::class.java))
-//        }
-//
-//        binding.signupButton.setOnClickListener {
-//            startActivity(Intent(this, SignupActivity::class.java))
-//        }
-//    }
-
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
-    }
-
-    private fun login(email: String, password: String) {
-        showLoading(true)
-
-        val client = ApiConfig.getApiService().login(email, password)
-        client.enqueue(object: Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                showLoading(false)
-                val responseBody = response.body()
-                Log.d(ContentValues.TAG, "onResponse: $responseBody")
-
-                if(response.isSuccessful && responseBody?.message == "success") {
-                    loginViewModel.saveUser(User(responseBody.loginResult.name,responseBody.loginResult.token, true))
-                    Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LoginActivity, UserPreferencesActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Log.e(ContentValues.TAG, "onFailure1: ${response.message()}")
-                    Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                showLoading(false)
-                Log.e(ContentValues.TAG, "onFailure2: ${t.message}")
-                Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
+    //Fullscreen
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -126,7 +85,44 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.getUser().observe(this) { user ->
             this.user = user
         }
+    }
 
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun login(email: String, password: String) {
+        showLoading(true)
+
+        val client = ApiConfig.getApiService().login(email, password)
+        client.enqueue(object: Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                showLoading(false)
+                val responseBody = response.body()
+                Log.d(TAG, "onResponse: $responseBody")
+
+                if(response.isSuccessful && responseBody?.message == "success") {
+                    loginViewModel.saveUser(User(responseBody.loginResult.name,responseBody.loginResult.token, true))
+                    Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Log.e(TAG, "onFailure1: ${response.message()}")
+                    Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                showLoading(false)
+                Log.e(TAG, "onFailure2: ${t.message}")
+                Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun playAnimation() {
@@ -136,7 +132,6 @@ class LoginActivity : AppCompatActivity() {
         val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(500)
         val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.passwordEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(500)
-
 
         AnimatorSet().apply {
             playSequentially(
@@ -151,18 +146,4 @@ class LoginActivity : AppCompatActivity() {
         }.start()
     }
 
-    companion object {
-        var token: String = ""
-
-        const val EXTRA_PHOTO = "EXTRA_PHOTO"
-        const val EXTRA_NAME = "EXTRA_NAME"
-        const val EXTRA_DESC = "EXTRA_DESC"
-        const val EXTRA_TOKEN = "EXTRA_TOKEN"
-        const val CAMERA_X_RESULT = 200
-        val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-        const val REQUEST_CODE_PERMISSIONS = 10
-        const val INITIAL_PAGE_INDEX = 1
-        const val EXTRA_MAP = "MAP"
-        const val EXTRA_MAP_NAME = "NAME"
-    }
 }

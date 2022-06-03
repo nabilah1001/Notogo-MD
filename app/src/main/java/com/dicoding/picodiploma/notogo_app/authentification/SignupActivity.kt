@@ -2,17 +2,27 @@ package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
+import com.dicoding.picodiploma.notogo_app.R
 import com.dicoding.picodiploma.notogo_app.authentification.login.LoginActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivitySignupBinding
+import com.dicoding.picodiploma.notogo_app.model.SignupResponse
+import com.dicoding.picodiploma.notogo_app.api.ApiConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,37 +34,25 @@ class SignupActivity : AppCompatActivity() {
         binding.emailEditText.type = "email"
         binding.passwordEditText.type = "password"
 
+        //btn signup
         binding.signupButton.setOnClickListener {
             val name = binding.nameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
 
-//            setupAction(name, email, password)
+            setupAction(name, email, password)
         }
 
-        setupView()
-        setupAction()
-        playAnimation()
-    }
-
-    private fun setupAction() {
+        //btn login
         binding.loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        binding.signupButton.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
+        setupView()
+        playAnimation()
     }
 
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
-    }
-
+    //Fullscreen
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -68,37 +66,45 @@ class SignupActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-//    private fun setupAction(name: String, email: String, password: String) {
-//        showLoading(true)
-//
-//        val client = ApiConfig.getApiService().createAccount(name, email, password)
-//        client.enqueue(object: Callback<SignupResponse> {
-//            override fun onResponse(
-//                call: Call<SignupResponse>,
-//                response: Response<SignupResponse>
-//            ) {
-//                showLoading(false)
-//                val responseBody = response.body()
-//                Log.d(ContentValues.TAG, "onResponse: $responseBody")
-//                if(response.isSuccessful && responseBody?.message == "User created") {
-//                    Toast.makeText(this@SignupActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
-//                    val intent = Intent(this@SignupActivity, LoginActivity::class.java)
-//                    startActivity(intent)
-//                    finish()
-//                } else {
-//                    Log.e(ContentValues.TAG, "onFailure1: ${response.message()}")
-//                    Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-//                showLoading(false)
-//                Log.e(ContentValues.TAG, "onFailure2: ${t.message}")
-//                Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
-//            }
-//
-//        })
-//    }
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun setupAction(name: String, email: String, password: String) {
+        showLoading(true)
+
+        val client = ApiConfig.getApiService().createAccount(name, email, password)
+        client.enqueue(object: Callback<SignupResponse> {
+            override fun onResponse(
+                call: Call<SignupResponse>,
+                response: Response<SignupResponse>
+            ) {
+                showLoading(false)
+                val responseBody = response.body()
+                Log.d(TAG, "onResponse: $responseBody")
+                if(response.isSuccessful && responseBody?.message == "Register sukses") {
+                    Toast.makeText(this@SignupActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Log.e(TAG, "onFailure1: ${response.message()}")
+                    Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
+                showLoading(false)
+                Log.e(TAG, "onFailure2: ${t.message}")
+                Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
 
     private fun playAnimation() {
         val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(500)
