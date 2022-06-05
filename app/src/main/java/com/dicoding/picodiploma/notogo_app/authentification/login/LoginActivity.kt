@@ -2,7 +2,6 @@ package com.dicoding.picodiploma.notogo_app.authentification.login
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -22,11 +21,11 @@ import com.dicoding.picodiploma.notogo_app.R
 import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.authentification.SignupActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityLoginBinding
-import com.dicoding.picodiploma.notogo_app.model.LoginResponse
 import com.dicoding.picodiploma.notogo_app.model.User
 import com.dicoding.picodiploma.notogo_app.model.UserPreference
-import com.dicoding.picodiploma.notogo_app.api.ApiConfig
 import com.dicoding.picodiploma.notogo_app.authentification.UserPreferencesActivity
+import com.dicoding.picodiploma.notogo_app.model.response.LoginResponse
+import com.dicoding.picodiploma.notogo_app.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,7 +49,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, UserPreferencesActivity::class.java))
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            login(email, password)
         }
 
         binding.signupButton.setOnClickListener {
@@ -60,6 +58,16 @@ class LoginActivity : AppCompatActivity() {
         setupView()
         setupViewModel()
         playAnimation()
+
+        binding.emailEditText.type = "email"
+        binding.passwordEditText.type = "password"
+
+        binding.loginButton.setOnClickListener {
+            val inputEmail = binding.emailEditText.text.toString()
+            val inputPassword = binding.passwordEditText.text.toString()
+
+            masukAccount(inputEmail, inputPassword)
+        }
     }
 
     //Fullscreen
@@ -87,30 +95,22 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
-    }
-
-    private fun login(email: String, password: String) {
+    private fun masukAccount(inputEmail: String, inputPassword: String) {
         showLoading(true)
 
-        val client = ApiConfig.getApiService().login(email, password)
+        val client = ApiConfig.getApiService().login(inputEmail, inputPassword)
         client.enqueue(object: Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 showLoading(false)
+
                 val responseBody = response.body()
                 Log.d(TAG, "onResponse: $responseBody")
-
-                if(response.isSuccessful && responseBody?.message == "success") {
-                    loginViewModel.saveUser(User(responseBody.loginResult.name,responseBody.loginResult.token, true))
+                if(response.isSuccessful && responseBody?.message == "Logged in!") {
+                    loginViewModel.saveUser(User(responseBody.token, true))
                     Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
+
                     startActivity(intent)
-                    finish()
                 } else {
                     Log.e(TAG, "onFailure1: ${response.message()}")
                     Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
@@ -122,6 +122,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.e(TAG, "onFailure2: ${t.message}")
                 Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
             }
+
         })
     }
 
@@ -144,6 +145,18 @@ class LoginActivity : AppCompatActivity() {
             )
             startDelay = 500
         }.start()
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    companion object {
+        private const val TAG = "Main Activity"
     }
 
 }

@@ -1,6 +1,6 @@
-package com.dicoding.picodiploma.notogo_app.api
+package com.dicoding.picodiploma.notogo_app.network
 
-import com.dicoding.picodiploma.notogo_app.BuildConfig
+import androidx.viewbinding.BuildConfig
 import com.dicoding.picodiploma.notogo_app.BuildConfig.URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,14 +8,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
-    companion object {
+    companion object{
         fun getApiService(): ApiService {
-            val loggingInterceptor = if (BuildConfig.DEBUG) {
+            val loggingInterceptor = if(BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
             }
-            val client : OkHttpClient = OkHttpClient.Builder()
+            val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
