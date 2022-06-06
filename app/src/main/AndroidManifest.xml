@@ -49,13 +49,13 @@
             android:name=".authentification.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".authentification.login.LoginActivity"
+            android:name=".authentification.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".splashscreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

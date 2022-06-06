@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.notogo_app.authentification.login
+package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -16,49 +16,30 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.picodiploma.notogo_app.MainActivity
-import com.dicoding.picodiploma.notogo_app.R
-import com.dicoding.picodiploma.notogo_app.ViewModelFactory
-import com.dicoding.picodiploma.notogo_app.authentification.SignupActivity
+import com.dicoding.picodiploma.notogo_app.*
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityLoginBinding
-import com.dicoding.picodiploma.notogo_app.model.User
-import com.dicoding.picodiploma.notogo_app.model.UserPreference
-import com.dicoding.picodiploma.notogo_app.authentification.UserPreferencesActivity
 import com.dicoding.picodiploma.notogo_app.model.response.LoginResponse
 import com.dicoding.picodiploma.notogo_app.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
 class LoginActivity : AppCompatActivity() {
-    private lateinit var loginViewModel: LoginViewModel
+
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var user: User
+    private lateinit var tokenViewModel: TokenViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.emailEditText.type = "email"
-        binding.passwordEditText.type = "password"
+        val pref = TokenPreference.getInstance(dataStore)
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
 
-        binding.loginButton.setOnClickListener {
-            startActivity(Intent(this, UserPreferencesActivity::class.java))
-            val email = binding.emailEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
-        }
-
-        binding.signupButton.setOnClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
-        }
-
-        setupView()
-        setupViewModel()
-        playAnimation()
-
+        //btn login
         binding.emailEditText.type = "email"
         binding.passwordEditText.type = "password"
 
@@ -68,6 +49,15 @@ class LoginActivity : AppCompatActivity() {
 
             masukAccount(inputEmail, inputPassword)
         }
+
+        //btn signup
+        binding.signupButton.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+        }
+
+        setupView()
+//        setupViewModel()
+        playAnimation()
     }
 
     //Fullscreen
@@ -84,46 +74,36 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupViewModel() {
-        loginViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[LoginViewModel::class.java]
-
-        loginViewModel.getUser().observe(this) { user ->
-            this.user = user
-        }
-    }
-
     private fun masukAccount(inputEmail: String, inputPassword: String) {
         showLoading(true)
 
-        val client = ApiConfig.getApiService().login(inputEmail, inputPassword)
+        val client = ApiConfig.getApiService().login(inputEmail,inputPassword)
         client.enqueue(object: Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+            override fun onResponse(
+                call: Call<LoginResponse>,
+                response: Response<LoginResponse>
+            ) {
                 showLoading(false)
-
-                val responseBody = response.body()
-                Log.d(TAG, "onResponse: $responseBody")
-                if(response.isSuccessful && responseBody?.message == "Logged in!") {
-                    loginViewModel.saveUser(User(responseBody.token, true))
-                    Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-
+                if (response.isSuccessful) {
+                    val token = response.body()?.token.toString()
+                    tokenViewModel.saveTokens(token)
+                    val intent = Intent(this@LoginActivity,MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
-                    Log.e(TAG, "onFailure1: ${response.message()}")
-                    Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
+                    showToast(response.message())
                 }
             }
-
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 showLoading(false)
-                Log.e(TAG, "onFailure2: ${t.message}")
-                Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
+                Log.e("FAILURE", "onFailure: ${t.message.toString()}")
             }
 
         })
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun playAnimation() {
@@ -153,10 +133,6 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
-    }
-
-    companion object {
-        private const val TAG = "Main Activity"
     }
 
 }

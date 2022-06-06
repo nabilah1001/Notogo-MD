@@ -56,4 +56,10 @@
     <string name="register_fail">Register failed</string>
     <string name="login_success">Login success</string>
     <string name="login_fail">Login failed</string>
+
+    <string name="empty_name">Name cannot be empty</string>
+    <string name="empty_email">Email cannot be empty</string>
+    <string name="empty_password">Password cannot be empty</string>
+
+    <string name="greeting">Hello %1$s,</string>
 </resources>

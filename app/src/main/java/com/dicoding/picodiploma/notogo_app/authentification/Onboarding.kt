@@ -2,6 +2,7 @@ package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -9,16 +10,56 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.dicoding.picodiploma.notogo_app.authentification.login.LoginActivity
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
+import com.dicoding.picodiploma.notogo_app.MainActivity
+import com.dicoding.picodiploma.notogo_app.TokenPreference
+import com.dicoding.picodiploma.notogo_app.TokenViewModel
+import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityOnboardingBinding
 
 class Onboarding : AppCompatActivity() {
+
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
     private lateinit var binding: ActivityOnboardingBinding
+//    private lateinit var onboardingViewModel: OnboardingViewModel
+    private lateinit var tokenViewModel: TokenViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        val pref = UserPreference.getInstance(dataStore)
+//        onboardingViewModel = ViewModelProvider(this, ViewModelFactory(pref))[OnboardingViewModel::class.java]
+//        onboardingViewModel.getUser().observe(this
+//        ) { token: User ->
+//            if (token != null) {
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
+//                finish()
+//            } else {
+//                val intent = Intent(this, Onboarding::class.java)
+//                startActivity(intent)
+//                finish()
+//            }
+//
+//        }
+
+        val pref = TokenPreference.getInstance(dataStore)
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
+        tokenViewModel.getTokens().observe(this
+        ) { token: String? ->
+            if (token != null){
+                val intent = Intent(this,MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.putExtra("tokenExtra",token)
+                startActivity(intent)
+                finish()
+            }
+        }
 
         setupView()
         setupAction()

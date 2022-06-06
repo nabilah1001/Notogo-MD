@@ -2,24 +2,45 @@ package com.dicoding.picodiploma.notogo_app.authentification
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.dicoding.picodiploma.notogo_app.authentification.login.LoginActivity
+import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
+import com.dicoding.picodiploma.notogo_app.TokenPreference
+import com.dicoding.picodiploma.notogo_app.TokenViewModel
+import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.databinding.ActivitySignupBinding
+import com.dicoding.picodiploma.notogo_app.model.response.SignupResponse
+import com.dicoding.picodiploma.notogo_app.network.ApiConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
 
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
     private lateinit var binding: ActivitySignupBinding
+    private lateinit var tokenViewModel: TokenViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //TokenViewModel
+        val pref = TokenPreference.getInstance(dataStore)
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
 
         binding.nameEditText.type = "name"
         binding.emailEditText.type = "email"
@@ -27,9 +48,10 @@ class SignupActivity : AppCompatActivity() {
 
         //btn signup
         binding.signupButton.setOnClickListener {
-            val name = binding.nameEditText.text.toString()
-            val email = binding.emailEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
+            val inputName = binding.nameEditText.text.toString()
+            val inputEmail = binding.emailEditText.text.toString()
+            val inputPassword = binding.passwordEditText.text.toString()
+            signup(inputName,inputEmail,inputPassword)
         }
 
         //btn login
@@ -55,12 +77,49 @@ class SignupActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
+    //ViewModel
+//    private fun setupViewModel() {
+//        signupViewModel = ViewModelProvider(
+//            this,
+//            ViewModelFactory(UserPreference.getInstance(dataStore))
+//        )[SignupViewModel::class.java]
+//
+//        signupViewModel.getUser().observe(this) { user ->
+//            this.user = user
+//        }
+//    }
+
+    private fun signup(inputName: String, inputEmail: String, inputPassword: String) {
+        showLoading(true)
+
+        val client = ApiConfig.getApiService().createAccount(inputName, inputEmail, inputPassword)
+        client.enqueue(object: Callback<SignupResponse> {
+            override fun onResponse(
+                call: Call<SignupResponse>,
+                response: Response<SignupResponse>
+            ) {
+                showLoading(false)
+                if (response.isSuccessful) {
+                    val token = response.body()?.token.toString()
+                    tokenViewModel.saveTokens(token)
+                    showToast(response.body()?.message.toString())
+                    val intent = Intent(this@SignupActivity,UserPreferencesActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    showToast(response.message())
+                }
+            }
+            override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
+                showLoading(false)
+                Log.e("FAILURE", "onFailure: ${t.message.toString()}")
+            }
+
+        })
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun playAnimation() {
@@ -72,7 +131,6 @@ class SignupActivity : AppCompatActivity() {
         val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(500)
         val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.passwordEditTextLayout, View.ALPHA, 1f).setDuration(500)
         val signup = ObjectAnimator.ofFloat(binding.signupButton, View.ALPHA, 1f).setDuration(500)
-
 
         AnimatorSet().apply {
             playSequentially(
@@ -87,5 +145,13 @@ class SignupActivity : AppCompatActivity() {
             )
             startDelay = 500
         }.start()
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 }

@@ -227,40 +227,7 @@
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:textSize="15sp"/>
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Language"-->
-<!--                    android:textSize="15sp"-->
-<!--                    android:fontFamily="@font/ppsemibold"-->
-<!--                    tools:ignore="HardcodedText" />-->
-
             </LinearLayout>
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="right"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/arrButton"-->
-<!--                    style="@style/Widget.Material3.Button.TextButton"-->
-<!--                    android:layout_width="185dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textAlignment="textStart"-->
-<!--                    android:fontFamily="@font/ppregular"-->
-<!--                    app:icon="@drawable/ic_arrow_right"-->
-<!--                    android:textSize="15sp"/>-->
-
-<!--&lt;!&ndash;                <ImageButton&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:id="@+id/arr"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="30dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="30dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:background="@drawable/ic_arrow_right" />&ndash;&gt;-->
-
-<!--            </LinearLayout>-->
 
         </LinearLayout>
 
