@@ -12,8 +12,9 @@ interface ApiService {
     @FormUrlEncoded
     @POST("login")
     fun login(
-        @Field("email") email :String,
-        @Field("password") password :String
+        @Field("email") email: String,
+        @Field("password") password: String,
+        inputPassword: String
     ): Call<LoginResponse>
 
     // Signup

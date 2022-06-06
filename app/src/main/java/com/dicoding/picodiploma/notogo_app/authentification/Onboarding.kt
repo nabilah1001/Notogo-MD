@@ -24,29 +24,12 @@ class Onboarding : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
     private lateinit var binding: ActivityOnboardingBinding
-//    private lateinit var onboardingViewModel: OnboardingViewModel
     private lateinit var tokenViewModel: TokenViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        val pref = UserPreference.getInstance(dataStore)
-//        onboardingViewModel = ViewModelProvider(this, ViewModelFactory(pref))[OnboardingViewModel::class.java]
-//        onboardingViewModel.getUser().observe(this
-//        ) { token: User ->
-//            if (token != null) {
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            } else {
-//                val intent = Intent(this, Onboarding::class.java)
-//                startActivity(intent)
-//                finish()
-//            }
-//
-//        }
 
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]

@@ -16,9 +16,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.picodiploma.notogo_app.TokenPreference
-import com.dicoding.picodiploma.notogo_app.TokenViewModel
-import com.dicoding.picodiploma.notogo_app.ViewModelFactory
+import com.dicoding.picodiploma.notogo_app.*
 import com.dicoding.picodiploma.notogo_app.databinding.ActivitySignupBinding
 import com.dicoding.picodiploma.notogo_app.model.response.SignupResponse
 import com.dicoding.picodiploma.notogo_app.network.ApiConfig
@@ -77,49 +75,37 @@ class SignupActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    //ViewModel
-//    private fun setupViewModel() {
-//        signupViewModel = ViewModelProvider(
-//            this,
-//            ViewModelFactory(UserPreference.getInstance(dataStore))
-//        )[SignupViewModel::class.java]
-//
-//        signupViewModel.getUser().observe(this) { user ->
-//            this.user = user
-//        }
-//    }
-
     private fun signup(inputName: String, inputEmail: String, inputPassword: String) {
         showLoading(true)
 
         val client = ApiConfig.getApiService().createAccount(inputName, inputEmail, inputPassword)
         client.enqueue(object: Callback<SignupResponse> {
-            override fun onResponse(
-                call: Call<SignupResponse>,
-                response: Response<SignupResponse>
-            ) {
+            override fun onResponse(call: Call<SignupResponse>, response: Response<SignupResponse>) {
                 showLoading(false)
-                if (response.isSuccessful) {
+
+                val responseBody = response.body()
+                Log.d(TAG, "onResponse: $responseBody")
+
+                if(response.isSuccessful && responseBody?.message == "Account created") {
                     val token = response.body()?.token.toString()
                     tokenViewModel.saveTokens(token)
-                    showToast(response.body()?.message.toString())
-                    val intent = Intent(this@SignupActivity,UserPreferencesActivity::class.java)
+                    Toast.makeText(this@SignupActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@SignupActivity, UserPreferencesActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    showToast(response.message())
+                    Log.e(TAG, "onFailure1: ${response.message()}")
+                    Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
                 }
             }
+
             override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
                 showLoading(false)
-                Log.e("FAILURE", "onFailure: ${t.message.toString()}")
+                Log.e(TAG, "onFailure2: ${t.message}")
+                Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
             }
 
         })
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun playAnimation() {
@@ -153,5 +139,9 @@ class SignupActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    companion object {
+        const val TAG = "Signup Activity"
     }
 }

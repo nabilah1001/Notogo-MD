@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
             val inputEmail = binding.emailEditText.text.toString()
             val inputPassword = binding.passwordEditText.text.toString()
 
-            masukAccount(inputEmail, inputPassword)
+            login(inputEmail, inputPassword)
         }
 
         //btn signup
@@ -56,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         setupView()
-//        setupViewModel()
         playAnimation()
     }
 
@@ -74,36 +73,37 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun masukAccount(inputEmail: String, inputPassword: String) {
+    private fun login(inputEmail: String, inputPassword: String) {
         showLoading(true)
 
-        val client = ApiConfig.getApiService().login(inputEmail,inputPassword)
+        val client = ApiConfig.getApiService().login(inputEmail, inputPassword, inputPassword)
         client.enqueue(object: Callback<LoginResponse> {
-            override fun onResponse(
-                call: Call<LoginResponse>,
-                response: Response<LoginResponse>
-            ) {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 showLoading(false)
-                if (response.isSuccessful) {
+
+                val responseBody = response.body()
+                Log.d(TAG, "onResponse: $responseBody")
+
+                if(response.isSuccessful && responseBody?.message == "Logged in!") {
                     val token = response.body()?.token.toString()
                     tokenViewModel.saveTokens(token)
-                    val intent = Intent(this@LoginActivity,MainActivity::class.java)
+                    Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()
+
                 } else {
-                    showToast(response.message())
+                    Log.e(TAG, "onFailure1: ${response.message()}")
+                    Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
                 }
             }
+
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 showLoading(false)
-                Log.e("FAILURE", "onFailure: ${t.message.toString()}")
+                Log.e(TAG, "onFailure2: ${t.message}")
+                Toast.makeText(this@LoginActivity, getString(R.string.login_fail), Toast.LENGTH_SHORT).show()
             }
-
         })
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun playAnimation() {
@@ -133,6 +133,10 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    companion object {
+        const val TAG = "Login Activity"
     }
 
 }
