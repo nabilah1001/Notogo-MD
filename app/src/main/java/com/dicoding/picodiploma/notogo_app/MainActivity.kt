@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var tokenViewModel: TokenViewModel
 
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_account -> {
-                val intent = Intent(this@MainActivity, AccountActivity::class.java)
+                val intent = Intent(this, AccountActivity::class.java)
                 startActivity(intent)
             }
         }

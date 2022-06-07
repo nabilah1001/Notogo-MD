@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //TokenViewModel
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
 
@@ -73,10 +74,11 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
+    //Function btn login
     private fun login(inputEmail: String, inputPassword: String) {
         showLoading(true)
 
-        val client = ApiConfig.getApiService().login(inputEmail, inputPassword, inputPassword)
+        val client = ApiConfig.getApiService().login(inputEmail, inputPassword)
         client.enqueue(object: Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 showLoading(false)

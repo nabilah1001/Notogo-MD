@@ -8,6 +8,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dicoding.picodiploma.notogo_app.recommend.Favorite
 import com.dicoding.picodiploma.notogo_app.bucket.History
 import com.dicoding.picodiploma.notogo_app.MainActivity
@@ -16,9 +18,12 @@ import com.dicoding.picodiploma.notogo_app.TokenViewModel
 import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.authentification.Onboarding
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityAccountBinding
+import kotlinx.android.synthetic.main.activity_account.*
 
-class AccountActivity : AppCompatActivity() {
+class AccountActivity() : AppCompatActivity() {
+
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
     private lateinit var binding: ActivityAccountBinding
     private lateinit var tokenViewModel: TokenViewModel
 
@@ -31,7 +36,34 @@ class AccountActivity : AppCompatActivity() {
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
 
-        tokenViewModel.getTokens()
+        //set profile
+        val accountViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[AccountViewModel::class.java]
+
+        tokenViewModel.getTokens().observe(this) { token: String? ->
+            if (token != null){
+                accountViewModel.setProfile(token)
+            }
+        }
+
+        //get profile
+        accountViewModel.getProfile().observe(this) {
+            if (it != null) {
+                binding.apply {
+                    tv_name.text = it.result?.name
+                    tv_email.text = it.result?.email
+
+                    Glide.with(this@AccountActivity)
+                        .load(it.result?.photo)
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .circleCrop()
+                        .into(iv_profile)
+
+                    tv_favorite.text = it.result?.favoriteCount.toString()
+                    tv_history.text = it.result?.historyCount.toString()
+                    tv_goals.text = it.result?.goalCount.toString()
+                }
+            }
+        }
 
         //btn
         binding.favoriteButton.setOnClickListener {

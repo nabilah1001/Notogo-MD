@@ -1,10 +1,10 @@
 package com.dicoding.picodiploma.notogo_app.network
 
 import com.dicoding.picodiploma.notogo_app.model.response.LoginResponse
+import com.dicoding.picodiploma.notogo_app.model.response.ProfileResponse
 import com.dicoding.picodiploma.notogo_app.model.response.SignupResponse
 import retrofit2.Call
 import retrofit2.http.*
-
 
 interface ApiService {
 
@@ -14,7 +14,6 @@ interface ApiService {
     fun login(
         @Field("email") email: String,
         @Field("password") password: String,
-        inputPassword: String
     ): Call<LoginResponse>
 
     // Signup
@@ -25,5 +24,11 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ) : Call<SignupResponse>
+
+    // Profile
+    @GET("profile")
+    fun getProfile(
+        @Header("token") token: String,
+    ): Call<ProfileResponse>
 
 }

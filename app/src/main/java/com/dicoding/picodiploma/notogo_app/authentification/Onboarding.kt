@@ -23,6 +23,7 @@ import com.dicoding.picodiploma.notogo_app.databinding.ActivityOnboardingBinding
 class Onboarding : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
     private lateinit var binding: ActivityOnboardingBinding
     private lateinit var tokenViewModel: TokenViewModel
 
@@ -31,6 +32,7 @@ class Onboarding : AppCompatActivity() {
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //TokenViewModel
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
         tokenViewModel.getTokens().observe(this
@@ -49,6 +51,7 @@ class Onboarding : AppCompatActivity() {
         playAnimation()
     }
 
+    //Fullscreen
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -62,6 +65,7 @@ class Onboarding : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
+    //btn
     private fun setupAction() {
         binding.loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))

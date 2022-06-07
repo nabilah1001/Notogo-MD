@@ -54,17 +54,14 @@ class SplashScreen : AppCompatActivity() {
     private fun setupAction() {
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
-        tokenViewModel.getTokens().observe(this
-        ) { token: String? ->
+        tokenViewModel.getTokens().observe(this) { token: String? ->
             Handler(Looper.getMainLooper()).postDelayed({
-                if (token != null) {
-                    val intent = Intent(this, Onboarding::class.java)
+                if (token != null){
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    val intent = Intent(this,MainActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//                    intent.putExtra(EXTRA_TOKEN,token)
+                    val intent = Intent(this,Onboarding::class.java)
                     startActivity(intent)
                     finish()
                 }

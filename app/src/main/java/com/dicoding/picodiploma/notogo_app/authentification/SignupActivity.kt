@@ -75,6 +75,7 @@ class SignupActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
+    //Function btn signup
     private fun signup(inputName: String, inputEmail: String, inputPassword: String) {
         showLoading(true)
 
@@ -87,12 +88,14 @@ class SignupActivity : AppCompatActivity() {
                 Log.d(TAG, "onResponse: $responseBody")
 
                 if(response.isSuccessful && responseBody?.message == "Account created") {
+//                    tokenViewModel.saveTokens(UserModel(responseBody.token, true))
                     val token = response.body()?.token.toString()
                     tokenViewModel.saveTokens(token)
                     Toast.makeText(this@SignupActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@SignupActivity, UserPreferencesActivity::class.java)
                     startActivity(intent)
                     finish()
+
                 } else {
                     Log.e(TAG, "onFailure1: ${response.message()}")
                     Toast.makeText(this@SignupActivity, getString(R.string.register_fail), Toast.LENGTH_SHORT).show()
