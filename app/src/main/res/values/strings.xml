@@ -62,4 +62,31 @@
     <string name="empty_password">Password cannot be empty</string>
 
     <string name="greeting">Hello %1$s,</string>
+    <string name="success_load_goals">Load Success</string>
+    <string name="fail_load_goals">Load Failed</string>
+    <string name="title">Title</string>
+    <string name="note">Note</string>
+    <string name="category">Category</string>
+    <string name="budget">Budget</string>
+    <string name="date">Date</string>
+    <string name="location">Location</string>
+    <string name="reminder">Reminder</string>
+    <string name="time">Time</string>
+    <string name="input_image">Input Image</string>
+    <string name="time_alarm">time alarm</string>
+    <string name="date_alarm">Date Alarm</string>
+    <string name="input_location">Input Location</string>
+    <string name="nama_lokasi">Nama Lokasi</string>
+    <string name="title_category">Category</string>
+    <string name="museum_enter">Monument/ Museum</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="sample_note">Suhu udara 15℃ terutama di sore hari. Termasuk gunung aktif, maka banyak uap asap berbau belerang.</string>
+    <string name="sample_date">22 Agustus 2022</string>
+    <string name="sample_budget">Rp. 245.000</string>
+    <string name="sample_title">Liburan Semester</string>
+    <string name="more_information">More Info</string>
+    <string name="transport">Transport</string>
+    <string name="hotel">Hotel</string>
+    <string name="food">Food</string>
 </resources>

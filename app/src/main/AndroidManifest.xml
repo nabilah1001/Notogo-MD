@@ -4,6 +4,8 @@
     package="com.dicoding.picodiploma.notogo_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notogo_App"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".AddActionActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".add.SearchLocationActivity"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".AddActionActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".bucket.DetailGoalActivity"
             android:exported="false" />

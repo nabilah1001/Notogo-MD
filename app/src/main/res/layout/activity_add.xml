@@ -1,118 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".add.AddActivity">
 
-    <EditText
-        android:id="@+id/et_title"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="textPersonName"
-        android:textColor="@color/blue_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_date"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:hint="DD-MM-YYYY"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/et_category"
-        app:layout_constraintStart_toStartOf="@+id/et_category"
-        app:layout_constraintTop_toBottomOf="@+id/et_category"
-        app:startIconDrawable="@drawable/ic_calendar"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/title"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:endIconMode="clear_text"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_image"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/white_2"
-        android:text="Input File"
-        android:textColor="@color/grey_1"
-        app:layout_constraintEnd_toEndOf="@+id/et_title"
-        app:layout_constraintStart_toStartOf="@+id/et_title"
-        app:layout_constraintTop_toBottomOf="@+id/et_title" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_note"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Notes"
-        android:inputType="textMultiLine"
-        android:textColor="@color/blue_1"
-        app:layout_constraintEnd_toEndOf="@+id/btn_image"
-        app:layout_constraintStart_toStartOf="@+id/btn_image"
-        app:layout_constraintTop_toBottomOf="@+id/btn_image" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_note"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/note"
+            app:counterEnabled="true"
+            app:counterMaxLength="100"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="@+id/btn_image"
+            app:layout_constraintStart_toStartOf="@+id/btn_image"
+            app:layout_constraintTop_toBottomOf="@+id/btn_image">
 
-    <EditText
-        android:id="@+id/et_category"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:hint="Category"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/et_note"
-        app:layout_constraintStart_toStartOf="@+id/et_note"
-        app:layout_constraintTop_toBottomOf="@+id/et_note"
-        app:startIconDrawable="@drawable/ic_category"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="top"
+                android:maxLength="100" />
 
-    <EditText
-        android:id="@+id/et_reminder"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:hint="Reminder"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/et_date"
-        app:layout_constraintStart_toStartOf="@+id/et_date"
-        app:layout_constraintTop_toBottomOf="@+id/et_date"
-        app:startIconDrawable="@drawable/ic_alarm"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_budget"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/form_template"
-        android:ems="10"
-        android:hint="Budget"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/et_reminder"
-        app:layout_constraintStart_toStartOf="@+id/et_reminder"
-        app:layout_constraintTop_toBottomOf="@+id/et_reminder"
-        app:startIconDrawable="@drawable/ic_budget"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_category"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/category"
+            app:counterEnabled="false"
+            app:endIconMode="clear_text"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="@+id/layout_note"
+            app:layout_constraintStart_toStartOf="@+id/layout_note"
+            app:layout_constraintTop_toBottomOf="@+id/layout_note"
+            app:startIconDrawable="@drawable/ic_travel">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="@+id/et_budget"
-        app:layout_constraintStart_toStartOf="@+id/et_budget"
-        app:layout_constraintTop_toBottomOf="@+id/et_budget" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_budget"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/budget"
+            app:counterEnabled="false"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:layout_constraintEnd_toEndOf="@+id/layout_date"
+            app:layout_constraintStart_toStartOf="@+id/layout_date"
+            app:layout_constraintTop_toBottomOf="@+id/layout_date"
+            app:prefixText="Rp. "
+            app:prefixTextColor="@color/blue_1"
+            app:startIconDrawable="@drawable/ic_wallet">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_budget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="20" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/date"
+            app:counterEnabled="false"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="@+id/layout_location"
+            app:layout_constraintStart_toStartOf="@+id/layout_location"
+            app:layout_constraintTop_toBottomOf="@+id/layout_location"
+            app:startIconDrawable="@drawable/ic_calendar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_location"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/location"
+            app:counterEnabled="false"
+            app:endIconMode="clear_text"
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="@+id/layout_category"
+            app:layout_constraintStart_toStartOf="@+id/layout_category"
+            app:layout_constraintTop_toBottomOf="@+id/layout_category"
+            app:startIconDrawable="@drawable/ic_location">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TableLayout
+            android:id="@+id/layout_reminder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_form"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/layout_budget"
+            app:layout_constraintStart_toStartOf="@+id/layout_budget"
+            app:layout_constraintTop_toBottomOf="@+id/layout_budget">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/tv_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/reminder"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="81dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/btn_once_time"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:src="@drawable/ic_alarm"
+                    tools:layout_editor_absoluteX="31dp"
+                    android:contentDescription="@string/time_alarm" />
+
+                <TextView
+                    android:id="@+id/tv_once_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/time"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="81dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/btn_once_date"
+                    style="@style/Base.Widget.AppCompat.ImageButton"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:src="@drawable/ic_calendar"
+                    tools:layout_editor_absoluteX="31dp"
+                    android:contentDescription="@string/date_alarm" />
+
+                <TextView
+                    android:id="@+id/tv_once_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/date"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="81dp" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_add_goal"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="5dp"
+            android:text="@string/add_goal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layout_reminder"
+            app:layout_constraintStart_toStartOf="@+id/layout_reminder"
+            app:layout_constraintTop_toBottomOf="@+id/layout_reminder" />
+
+        <ImageView
+            android:id="@+id/img_preview"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_border"
+            android:contentDescription="Image Preview"
+            android:src="@drawable/ic_image"
+            app:layout_constraintEnd_toEndOf="@id/layout_title"
+            app:layout_constraintStart_toStartOf="@id/layout_title"
+            app:layout_constraintTop_toBottomOf="@id/layout_title" />
+
+        <Button
+            android:id="@+id/btn_image"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white_2"
+            android:text="@string/input_image"
+            android:textColor="@color/blue_1"
+            app:layout_constraintEnd_toEndOf="@+id/layout_title"
+            app:layout_constraintHorizontal_bias="0.284"
+            app:layout_constraintStart_toStartOf="@+id/layout_title"
+            app:layout_constraintTop_toBottomOf="@+id/img_preview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

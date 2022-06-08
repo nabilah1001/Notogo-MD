@@ -8,117 +8,262 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_image" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="270dp" />
+        tools:srcCompat="@drawable/sample_goal" />
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="459dp"
+        android:background="@drawable/bg_detail_goal"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_title_goal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/ppbold"
-                android:text="Gunung Papandayan"
+                android:text="@string/sample_title"
                 android:textColor="@color/blue_1"
-                android:textSize="25sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/ppsemibold"
-                android:text="Note : "
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/ppsemibold"
-                android:text="Senin, 3 Agustus 2022"
-                android:textColor="@color/blue_1"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/textView15"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/ppsemibold"
-                android:text="Rp. 235.000"
-                android:textColor="@color/blue_1"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/textView12"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/ppsemibold"
-                android:text="Action Step"
-                android:textColor="@color/blue_1"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="Add Action"
-                app:layout_constraintBottom_toBottomOf="@+id/textView14"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
-
-            <TextView
-                android:id="@+id/textView15"
+            <TableLayout
+                android:id="@+id/layout_note"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/ppregular"
-                android:text="Suhu udara 15℃ terutama di sore hari. Termasuk gunung aktif, maka banyak uap asap berbau belerang."
-                android:textSize="18sp"
+                android:background="@drawable/bg_form"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_goal">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/title_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/ppsemibold"
+                        android:padding="5dp"
+                        android:text="@string/note"
+                        android:textColor="@color/blue_1"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/tv_note"
+                        android:layout_width="333dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/ppmedium"
+                        android:padding="5dp"
+                        android:text="@string/sample_note"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/layout_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_form"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_note">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/ic_date"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:contentDescription="@string/time_alarm"
+                        android:src="@drawable/ic_calendar"
+                        tools:layout_editor_absoluteX="31dp" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/ppmedium"
+                        android:padding="5dp"
+                        android:text="@string/sample_date"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/ic_budget"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:contentDescription="@string/time_alarm"
+                        android:src="@drawable/ic_budget"
+                        tools:layout_editor_absoluteX="31dp" />
+
+                    <TextView
+                        android:id="@+id/tv_budget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/ppmedium"
+                        android:padding="5dp"
+                        android:text="@string/sample_budget"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/ic_location"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:contentDescription="@string/time_alarm"
+                        android:src="@drawable/ic_location"
+                        tools:layout_editor_absoluteX="31dp" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/ppmedium"
+                        android:padding="5dp"
+                        android:text="@string/sample_location"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/layout_information"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_form"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_data">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/tv_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/ppsemibold"
+                        android:padding="5dp"
+                        android:text="@string/more_information"
+                        android:textColor="@color/blue_1"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <Button
+                        android:id="@+id/btn_transport"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:fontFamily="@font/ppregular"
+                        android:text="@string/transport"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btn_hotel"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:fontFamily="@font/ppregular"
+                        android:text="@string/hotel"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btn_food"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:fontFamily="@font/ppregular"
+                        android:text="@string/food"
+                        android:textSize="12sp" />
+
+                </TableRow>
+            </TableLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="240dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

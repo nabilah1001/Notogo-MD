@@ -10,7 +10,4 @@ class DetailGoalActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail_goal)
     }
 
-    companion object {
-        const val EXTRA_TOKEN = "extra_token"
-    }
 }

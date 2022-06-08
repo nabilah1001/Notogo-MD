@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add.CustomDialogFragment">
+
+    <TextView
+        android:id="@+id/tv_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/ppbold"
+        android:text="@string/title_category"
+        android:textColor="@color/blue_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/layout_cek"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_category_title">
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_beach"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/beach" />
+
+            <CheckBox
+                android:id="@+id/cek_mountain"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mountain" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_lake"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lake" />
+
+            <CheckBox
+                android:id="@+id/cek_zoo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zoo" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_river"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/river" />
+
+            <CheckBox
+                android:id="@+id/cek_waterpark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/water_park" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_cultural"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cultural_heritage" />
+
+            <CheckBox
+                android:id="@+id/cek_amusement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amusement_park" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_waterfall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/waterfall" />
+
+            <CheckBox
+                android:id="@+id/cek_art"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/art_gallery" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_mall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mall" />
+
+            <CheckBox
+                android:id="@+id/cek_museum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sight_seeing" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_religious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religious_place" />
+
+            <CheckBox
+                android:id="@+id/cek_outbond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/outbound" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_cullinary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/culinary" />
+
+            <CheckBox
+                android:id="@+id/cek_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shopping" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:id="@+id/cek_hunting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photo_hunting" />
+
+            <CheckBox
+                android:id="@+id/cek_sight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/museum_enter" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_cek" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_cek" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

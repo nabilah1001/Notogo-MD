@@ -14,7 +14,7 @@ class AddFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
-    : View? {
+            : View? {
 
         val bind = FragmentAddBinding.inflate(layoutInflater)
 

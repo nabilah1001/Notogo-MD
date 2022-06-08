@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.notogo_app.databinding.ItemRowGoalBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItemGoals
+import com.dicoding.picodiploma.notogo_app.utils.withDateFormat
 
 class ListBucketAdapter(private val result: List<ResultItemGoals>): RecyclerView.Adapter<ListBucketAdapter.ViewHolder>() {
 
@@ -24,8 +25,8 @@ class ListBucketAdapter(private val result: List<ResultItemGoals>): RecyclerView
     class ViewHolder(private val binding: ItemRowGoalBinding)  : RecyclerView.ViewHolder(binding.root){
         fun bind(resultItem: ResultItemGoals){
             with(binding){
-                txtTitle.text = resultItem.title
-                txtDate.text = resultItem.date
+                titleGoal.text = resultItem.title
+                dateGoal.text = resultItem.date?.withDateFormat()
 
                 binding.root.setOnClickListener {
                     Intent(binding.root.context, DetailGoalActivity::class.java)
