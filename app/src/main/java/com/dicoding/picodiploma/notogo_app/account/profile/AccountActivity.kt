@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.notogo_app.account
+package com.dicoding.picodiploma.notogo_app.account.profile
 
 import android.content.Context
 import android.content.Intent
@@ -10,8 +10,8 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.dicoding.picodiploma.notogo_app.recommend.Favorite
-import com.dicoding.picodiploma.notogo_app.bucket.History
+import com.dicoding.picodiploma.notogo_app.account.favorite.FavoriteActivity
+import com.dicoding.picodiploma.notogo_app.account.history.HistoryActivity
 import com.dicoding.picodiploma.notogo_app.MainActivity
 import com.dicoding.picodiploma.notogo_app.TokenPreference
 import com.dicoding.picodiploma.notogo_app.TokenViewModel
@@ -67,7 +67,7 @@ class AccountActivity() : AppCompatActivity() {
 
         //btn
         binding.favoriteButton.setOnClickListener {
-            startActivity(Intent(this, Favorite::class.java))
+            startActivity(Intent(this, FavoriteActivity::class.java))
         }
 
         binding.goalsButton.setOnClickListener {
@@ -75,7 +75,7 @@ class AccountActivity() : AppCompatActivity() {
         }
 
         binding.historyButton.setOnClickListener {
-            startActivity(Intent(this, History::class.java))
+            startActivity(Intent(this, HistoryActivity::class.java))
         }
 
         binding.logoutButton.setOnClickListener {

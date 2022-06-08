@@ -13,6 +13,7 @@
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1215" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_fav_on.xml" value="0.1215" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_location.xml" value="0.159" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_account.xml" value="0.22" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_detail_travel.xml" value="0.22" />
@@ -26,8 +27,9 @@
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_splash_screen.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_user_preferences.xml" value="0.18704710144927536" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_add.xml" value="0.16394927536231885" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_recommend.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_loading.xml" value="0.5" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_recommend.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_favorite.xml" value="0.22" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.3333333333333333" />

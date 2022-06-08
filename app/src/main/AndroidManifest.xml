@@ -31,13 +31,13 @@
             android:name=".add.AddActivity"
             android:exported="false" />
         <activity
-            android:name=".bucket.History"
+            android:name=".account.history.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".recommend.Favorite"
+            android:name=".account.favorite.FavoriteActivity"
             android:exported="false" />
         <activity
-            android:name=".account.AccountActivity"
+            android:name=".account.profile.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".recommend.DetailTravel"

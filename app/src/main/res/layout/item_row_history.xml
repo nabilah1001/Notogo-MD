@@ -48,24 +48,24 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linear_layoutHistory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linear_layoutHistory"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/tv_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="* * * * *"
-                android:textSize="25sp"
-                android:fontFamily="@font/ppsemibold"
-                tools:ignore="HardcodedText"/>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_history"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="* * * * *"-->
+<!--                android:textSize="25sp"-->
+<!--                android:fontFamily="@font/ppsemibold"-->
+<!--                tools:ignore="HardcodedText"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

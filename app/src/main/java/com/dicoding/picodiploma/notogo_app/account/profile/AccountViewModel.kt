@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.notogo_app.account
+package com.dicoding.picodiploma.notogo_app.account.profile
 
 import android.util.Log
 import androidx.lifecycle.LiveData

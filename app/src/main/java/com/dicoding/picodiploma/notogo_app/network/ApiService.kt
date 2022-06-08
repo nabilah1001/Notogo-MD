@@ -1,8 +1,6 @@
 package com.dicoding.picodiploma.notogo_app.network
 
-import com.dicoding.picodiploma.notogo_app.model.response.LoginResponse
-import com.dicoding.picodiploma.notogo_app.model.response.ProfileResponse
-import com.dicoding.picodiploma.notogo_app.model.response.SignupResponse
+import com.dicoding.picodiploma.notogo_app.model.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -28,7 +26,24 @@ interface ApiService {
     // Profile
     @GET("profile")
     fun getProfile(
-        @Header("token") token: String,
+        @Header("token") token: String
     ): Call<ProfileResponse>
 
+    // Favorite
+    @GET("profile/favorite")
+    fun getFavorite(
+        @Header("token") token: String
+    ) : Call<FavoriteResponse>
+
+    // History
+    @GET("profile/history")
+    fun getHistory(
+        @Header("token") token: String
+    ) : Call<HistoryResponse>
+
+    // Goals
+    @GET("goals")
+    fun getGoals(
+        @Header("token") token: String
+    ) : Call<GoalsResponse>
 }

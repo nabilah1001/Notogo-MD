@@ -14,7 +14,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.dicoding.picodiploma.notogo_app.account.AccountActivity
+import com.dicoding.picodiploma.notogo_app.account.profile.AccountActivity
 import com.dicoding.picodiploma.notogo_app.add.AddActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //TokenViewModel
-        val pref = TokenPreference.getInstance(dataStore)
-        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
-
-        tokenViewModel.getTokens()
+//        val pref = TokenPreference.getInstance(dataStore)
+//        tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]
+//
+//        tokenViewModel.getTokens()
 
         nav_bottom.background = null
         nav_bottom.menu.getItem(1).isEnabled = false
@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val EXTRA_TOKEN = "extra_token"
     }
 
 }
