@@ -89,4 +89,8 @@
     <string name="transport">Transport</string>
     <string name="hotel">Hotel</string>
     <string name="food">Food</string>
+    <string name="search_location">Search Location</string>
+    <string name="choose_location">Choose Location</string>
+    <string name="find_location">Find Location</string>
+    <string name="search_hint">Search Location</string>
 </resources>

@@ -5,8 +5,6 @@
       <map>
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.1085" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1085" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/bg_detail_goal.xml" value="0.1" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/bg_form.xml" value="0.1" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/btn_filled.xml" value="0.1545" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/btn_outlined.xml" value="0.1545" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/chip.xml" value="0.153" />
@@ -15,11 +13,8 @@
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1215" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_fav_on.xml" value="0.1215" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_list_goal.xml" value="0.1" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_location.xml" value="0.159" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_account.xml" value="0.22" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.1" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_detail_goal.xml" value="0.1" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_detail_travel.xml" value="0.22" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_favorite.xml" value="0.12" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_history.xml" value="0.16666666666666666" />
@@ -27,22 +22,61 @@
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_onboarding.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_recommend.xml" value="0.16394927536231885" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_search_location.xml" value="0.11911231884057971" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_signup.xml" value="0.5" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_splash_screen.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_user_preferences.xml" value="0.18704710144927536" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_add.xml" value="0.16394927536231885" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.12092391304347826" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.13903985507246377" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_recommend.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_loading.xml" value="0.5" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_recommend.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_favorite.xml" value="0.22" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_history.xml" value="0.22" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_location.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo-MD/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/bg_detail_goal.xml" value="0.153" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/bg_form.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/btn_filled.xml" value="0.153" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/btn_outlined.xml" value="0.134" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/button_border.xml" value="0.102" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_add.xml" value="0.158" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_apps.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_calendar.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_image.xml" value="0.134" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_list_goal.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_location.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_locatopn.xml" value="0.1225" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_not_ok.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_ok.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/ic_search.xml" value="0.1225" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/activity_detail_goal.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.15572916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/activity_search_location.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/fragment_add.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.15572916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/item_recommend.xml" value="0.15572916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/item_row_favorite.xml" value="0.15572916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.12907608695652173" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/item_row_history.xml" value="0.15572916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/layout/item_row_location.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/bg_detail_goal.xml" value="0.162" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/bg_form.xml" value="0.162" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/ic_calendar.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/ic_explore.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/ic_input_location.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/layout/activity_detail_goal.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/layout/activity_location.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/menu/option_menu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/13/Notogo-MD/app/src/main/res/menu/search_action.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_add.xml" value="0.1015" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_list.xml" value="0.1015" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_maps.xml" value="0.1015" />
@@ -80,9 +114,13 @@
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/9/Notogo-MD/app/src/main/res/layout/fragment_recommend.xml" value="0.1796875" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/9/Notogo-MD/app/src/main/res/layout/item_recommend.xml" value="0.1796875" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/9/Notogo-MD/app/src/main/res/menu/bottom_menu.xml" value="0.1796875" />
-        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/drawable/ic_list_goal.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/activity_recommend.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_bucket.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/fragment_recommend.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.22" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo-MD/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo_App/app/src/main/res/font/poppins_bold.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/Notogo_App/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />

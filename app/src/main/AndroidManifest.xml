@@ -18,11 +18,9 @@
         android:theme="@style/Theme.Notogo_App"
         tools:targetApi="31">
         <activity
-            android:name=".add.SearchLocationActivity"
-            android:exported="false" />
-        <!-- <activity -->
-        <!-- android:name=".AddActionActivity" -->
-        <!-- android:exported="false" /> -->
+            android:name=".add.location.LocationActivity"
+            android:exported="false"
+            android:parentActivityName=".add.AddActivity"/>
         <activity
             android:name=".bucket.DetailGoalActivity"
             android:exported="false" />
@@ -34,7 +32,8 @@
             android:exported="false" />
         <activity
             android:name=".add.AddActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".account.history.HistoryActivity"
             android:exported="false" />

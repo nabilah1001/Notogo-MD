@@ -14,6 +14,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.dicoding.picodiploma.notogo_app.R
+import com.dicoding.picodiploma.notogo_app.add.location.LocationActivity
 import com.dicoding.picodiploma.notogo_app.add.utils.AlarmManager
 import com.dicoding.picodiploma.notogo_app.add.utils.DatePickerFragment
 import com.dicoding.picodiploma.notogo_app.add.utils.TimePickerFragment
@@ -75,7 +76,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
 
         // Fill Location
         binding.layoutLocation.setOnClickListener {
-            startActivity(Intent(this, SearchLocationActivity::class.java))
+            startActivity(Intent(this, LocationActivity::class.java))
         }
     }
 
@@ -175,6 +176,8 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
     companion object {
         private const val DATE_PICKER_TAG = "DatePicker"
         private const val TIME_PICKER_ONCE_TAG = "TimePickerOnce"
+        const val EXTRA_LOCATION = "extra_location"
+        const val EXTRA_LOCATION_ID = "extra_location_id"
     }
 
 

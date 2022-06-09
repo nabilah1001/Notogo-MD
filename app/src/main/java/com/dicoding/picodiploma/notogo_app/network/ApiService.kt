@@ -46,4 +46,10 @@ interface ApiService {
     fun getGoals(
         @Header("token") token: String
     ) : Call<GoalsResponse>
+
+    // Search Location
+    @GET("/location/search")
+    fun getSearchLocations(
+        @Query("search") query: String
+    ): Call<LocationResponse>
 }
