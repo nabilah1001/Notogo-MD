@@ -23,4 +23,15 @@ class TokenViewModel (private val pref: TokenPreference) : ViewModel() {
         }
     }
 
+    // ThemeSetting
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+    fun saveThemeSetting(isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkModeActive)
+        }
+    }
+
 }

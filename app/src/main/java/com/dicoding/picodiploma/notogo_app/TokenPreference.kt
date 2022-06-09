@@ -2,6 +2,7 @@ package com.dicoding.picodiploma.notogo_app
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
@@ -13,6 +14,7 @@ class TokenPreference private constructor(private val dataStore: DataStore<Prefe
         @Volatile
         private var INSTANCE: TokenPreference? = null
         private val TOKEN_KEY = stringPreferencesKey("token")
+        private val THEME_KEY = booleanPreferencesKey("theme")
 
         fun getInstance(dataStore: DataStore<Preferences>): TokenPreference {
             return INSTANCE ?: synchronized(this) {
@@ -35,10 +37,21 @@ class TokenPreference private constructor(private val dataStore: DataStore<Prefe
         }
     }
 
-
     suspend fun removeToken() {
         dataStore.edit {
             it.clear()
+        }
+    }
+
+    fun getThemeSetting(): Flow<Boolean> {
+        return dataStore.data.map { preferences ->
+            preferences[THEME_KEY] ?: false
+        }
+    }
+
+    suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[THEME_KEY] = isDarkModeActive
         }
     }
 

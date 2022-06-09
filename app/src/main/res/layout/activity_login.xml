@@ -23,21 +23,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/messageTextView"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:alpha="0"-->
-<!--        android:fontFamily="@font/ppregular"-->
-<!--        android:text="@string/message_login_page"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="15sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/messageTextView"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="32dp"-->
+    <!--        android:layout_marginEnd="32dp"-->
+    <!--        android:alpha="0"-->
+    <!--        android:fontFamily="@font/ppregular"-->
+    <!--        android:text="@string/message_login_page"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="15sp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />-->
 
     <TextView
         android:id="@+id/emailTextView"
@@ -59,9 +59,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:textColorHint="@color/blue_1"
-        app:boxStrokeWidth="2dp"
-        app:boxStrokeColor="@color/black"
         app:startIconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +98,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
         app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black"
+        app:startIconTint="@color/black"
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.dicoding.picodiploma.notogo_app.CustomEditText
@@ -137,7 +136,7 @@
         android:fontFamily="@font/ppmedium"
         android:text="Sign Up"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/loginButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/descTextView"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
@@ -146,14 +145,14 @@
         android:id="@+id/descTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/ppregular"
         android:text="Didn’t have account?"
         android:textAlignment="center"
         android:textColor="@color/blackpure"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <androidx.constraintlayout.widget.Guideline

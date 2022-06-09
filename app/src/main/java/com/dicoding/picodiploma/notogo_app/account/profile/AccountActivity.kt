@@ -4,23 +4,25 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.dicoding.picodiploma.notogo_app.*
 import com.dicoding.picodiploma.notogo_app.account.favorite.FavoriteActivity
 import com.dicoding.picodiploma.notogo_app.account.history.HistoryActivity
-import com.dicoding.picodiploma.notogo_app.MainActivity
-import com.dicoding.picodiploma.notogo_app.TokenPreference
-import com.dicoding.picodiploma.notogo_app.TokenViewModel
-import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.authentification.Onboarding
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityAccountBinding
+import com.google.android.material.switchmaterial.SwitchMaterial
 import kotlinx.android.synthetic.main.activity_account.*
 
-class AccountActivity() : AppCompatActivity() {
+class AccountActivity : AppCompatActivity() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -31,6 +33,15 @@ class AccountActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Toolbar
+//        val toolbar = binding.toolbar as Toolbar?
+//        setSupportActionBar(toolbar)
+//        toolbar?.title = "Account"
+//        toolbar?.subtitle = "Sub"
+//        toolbar?.navigationIcon = ContextCompat.getDrawable(this,R.drawable.ic_back)
+//        toolbar?.setNavigationOnClickListener { Toast.makeText(applicationContext,"Navigation icon was clicked",Toast.LENGTH_SHORT).show()
+//        }
 
         //TokenViewModel
         val pref = TokenPreference.getInstance(dataStore)
@@ -76,6 +87,24 @@ class AccountActivity() : AppCompatActivity() {
 
         binding.historyButton.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
+        }
+
+        //SwitchTheme
+        val switchTheme = findViewById<SwitchMaterial>(R.id.switch_theme)
+
+        tokenViewModel.getThemeSettings().observe(this
+        ) { isDarkModeActive: Boolean ->
+            if (isDarkModeActive) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                switchTheme.isChecked = true
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                switchTheme.isChecked = false
+            }
+        }
+
+        switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
+            tokenViewModel.saveThemeSetting(isChecked)
         }
 
         binding.logoutButton.setOnClickListener {
