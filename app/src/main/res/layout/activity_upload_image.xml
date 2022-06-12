@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add.UploadImageActivity">
+
+    <ImageView
+        android:id="@+id/img_preview"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_border"
+        android:contentDescription="@string/image_preview"
+        android:src="@drawable/ic_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_image"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white_2"
+        android:text="@string/input_image"
+        android:textColor="@color/blue_1"
+        app:layout_constraintEnd_toEndOf="@+id/img_preview"
+        app:layout_constraintStart_toStartOf="@+id/img_preview"
+        app:layout_constraintTop_toBottomOf="@+id/img_preview" />
+
+    <Button
+        android:id="@+id/btn_add_goal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:padding="5dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/btn_image"
+        app:layout_constraintStart_toStartOf="@+id/btn_image"
+        app:layout_constraintTop_toBottomOf="@+id/btn_image" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/grey_1"
+        android:text="@string/skip_without_image"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add_goal"
+        app:layout_constraintStart_toStartOf="@+id/btn_add_goal"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_goal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

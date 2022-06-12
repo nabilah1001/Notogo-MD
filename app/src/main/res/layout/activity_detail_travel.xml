@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/imagecategory"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="wrap_content"
                 android:contentDescription="imagecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -29,11 +29,11 @@
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tv_detail_wisata"
-                android:layout_width="255dp"
-                android:layout_height="80dp"
+                android:id="@+id/tv_location"
+                android:layout_width="275dp"
+                android:layout_height="77dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="45dp"
                 android:fontFamily="@font/ppsemibold"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,69 +52,22 @@
                 android:textOn=""
                 app:fabSize="normal"
                 app:layout_anchorGravity="bottom|end"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_detail_wisata"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_location"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_detail_wisata" />
+                app:layout_constraintTop_toTopOf="@+id/tv_location"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/tv_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
+                android:id="@+id/tv_category"
+                android:layout_width="288dp"
+                android:layout_height="73dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/ppmedium"
                 android:gravity="center_vertical"
                 android:textSize="15sp"
-                app:drawableStartCompat="@drawable/ic_location"
-                app:layout_constraintStart_toStartOf="@+id/tv_detail_wisata"
-                app:layout_constraintTop_toBottomOf="@+id/tv_detail_wisata"
-                tools:text="Location" />
-
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chipGroup"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_location"
                 app:layout_constraintTop_toBottomOf="@+id/tv_location"
-                app:layout_constraintVertical_bias="0.0">
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipBeach"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="@string/beach"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    app:chipBackgroundColor="@drawable/chip"
-                    app:chipCornerRadius="10dp"
-                    app:chipStrokeColor="@color/black"
-                    app:chipStrokeWidth="1dp"
-                    app:textEndPadding="15dp"
-                    app:textStartPadding="15dp" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipMountain"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="@string/mountain"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    app:chipBackgroundColor="@drawable/chip"
-                    app:chipCornerRadius="10dp"
-                    app:chipStrokeColor="@color/black"
-                    app:chipStrokeWidth="1dp"
-                    app:textEndPadding="15dp"
-                    app:textStartPadding="15dp" />
-
-            </com.google.android.material.chip.ChipGroup>
+                tools:text="Category" />
 
             <Button
                 android:id="@+id/loginButton"
@@ -131,7 +84,7 @@
                 android:background="@drawable/btn_filled"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_category" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

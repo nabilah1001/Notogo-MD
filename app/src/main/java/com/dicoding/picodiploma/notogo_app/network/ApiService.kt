@@ -67,10 +67,28 @@ interface ApiService {
         @Field("note") note: String
     ) : Call<AddGoalResponse>
 
-    @Headers("Accept: token/json")
-    @POST("goals/add")
-    fun addGoal(
-        @Body AddGoalResponse: AddGoalResponse?
-    ): Call<AddGoalResponse?>?
+//    @POST("goals/add")
+//        AddResponse postJson(@Body Goal body)
 
+    // Recommendation
+    @GET("recommendations")
+    fun getRecommend(
+        @Header("token") token: String
+    ) : Call<RecommendationResponse>
+
+    // UserPreferences
+    @FormUrlEncoded
+    @PUT("profile/preferences")
+    fun putPreferences(
+        @Header("token") token: String,
+        @Field("preference_ids") preference_ids: ArrayList<Int>
+    ) : Call<PreferencesResponse>
+
+    // LikeLocation
+    @FormUrlEncoded
+    @PUT("recommendations/like")
+    fun putLike(
+        @Header("token") token: String,
+        @Path("id") id: Int
+    ) : Call<LikeResponse>
 }
