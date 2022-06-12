@@ -1,13 +1,9 @@
 package com.dicoding.picodiploma.notogo_app.account.history
 
-import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.picodiploma.notogo_app.account.favorite.FavoriteActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ItemRowHistoryBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItemHistory
 import com.dicoding.picodiploma.notogo_app.utils.withDateFormat
@@ -24,7 +20,6 @@ class ListHistoryAdapter(private val result: List<ResultItemHistory>): RecyclerV
     }
 
     override fun getItemCount(): Int = result.size
-
 
     class ViewHolder(private val binding: ItemRowHistoryBinding)  : RecyclerView.ViewHolder(binding.root){
         fun bind(resultItem: ResultItemHistory) {

@@ -89,6 +89,6 @@ interface ApiService {
     @POST("recommendations/like")
     fun getLike(
         @Header("token") token: String,
-        @Path("id") id: Int
+        @Field("location_id") location_id: Int
     ) : Call<LikeResponse>
 }
