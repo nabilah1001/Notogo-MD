@@ -34,6 +34,8 @@ class AccountActivity : AppCompatActivity() {
         binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "Account"
+
         //Toolbar
 //        val toolbar = binding.toolbar as Toolbar?
 //        setSupportActionBar(toolbar)

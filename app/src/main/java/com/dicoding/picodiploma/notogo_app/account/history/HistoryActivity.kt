@@ -26,6 +26,8 @@ class HistoryActivity : AppCompatActivity() {
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "History"
+
         //TokenViewModel
         val pref = TokenPreference.getInstance(dataStore)
         tokenViewModel = ViewModelProvider(this, ViewModelFactory(pref))[TokenViewModel::class.java]

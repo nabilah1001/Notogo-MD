@@ -2,6 +2,8 @@ package com.dicoding.picodiploma.notogo_app.network
 
 import com.dicoding.picodiploma.notogo_app.model.response.*
 import com.google.gson.JsonObject
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -55,20 +57,25 @@ interface ApiService {
     ): Call<LocationResponse>
 
     // Add Goal
-    @FormUrlEncoded
     @POST("goals/add")
-    fun addGoalUser(
-        @Header("token") token: String,
-        @Field("title") title: String,
-        @Field("location_id") location_id: Int,
-        @Field("location_name") location_name: String,
-        @Field("budget") budget: Int,
-        @Field("date") date: String,
-        @Field("note") note: String
-    ) : Call<AddGoalResponse>
+    fun addGoal(
+        @Header("token") token:String,
+        @Body body: RequestBody
+    ): Call<AddGoalResponse>
 
-//    @POST("goals/add")
-//        AddResponse postJson(@Body Goal body)
+    // Upload Image
+    @Multipart
+    @POST("/goals/add/{goals_id}")
+    fun uploadImg(
+        @Part("goals_id") file: String
+    ): Call<UploadImageResponse>
+
+//    // Upload Image
+//    @Multipart
+//    @POST("/goals/add/{goals_id}")
+//    fun uploadImg(
+//        @Part file: MultipartBody.Part
+//    ): Call<UploadImageResponse>
 
     // Recommendation
     @GET("recommendations")
@@ -76,7 +83,7 @@ interface ApiService {
         @Header("token") token: String
     ) : Call<RecommendationResponse>
 
-    // UserPreferences
+    // User Preferences
     @FormUrlEncoded
     @POST("profile/preferences")
     fun getPreferences(
@@ -84,7 +91,7 @@ interface ApiService {
         @Field("preference_ids") preference_ids: ArrayList<Int>
     ) : Call<PreferencesResponse>
 
-    // LikeLocation
+    // Like Location
     @FormUrlEncoded
     @POST("recommendations/like")
     fun getLike(

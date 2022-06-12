@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -19,7 +20,14 @@ import com.dicoding.picodiploma.notogo_app.add.utils.DatePickerFragment
 import com.dicoding.picodiploma.notogo_app.add.utils.TimePickerFragment
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityAddBinding
 import com.dicoding.picodiploma.notogo_app.model.response.AddGoalResponse
+import com.dicoding.picodiploma.notogo_app.network.ApiConfig
 import com.google.android.material.textfield.TextInputEditText
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,6 +45,8 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "Add Goal"
+
         setupAction()
         setupViewModel()
         showDatePicker()
@@ -46,8 +56,8 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         // val locationId = intent.getIntExtra(EXTRA_LOCATION_ID, 0)
 
         // Create JSON Object
-        binding.btnAddGoal.setOnClickListener {
-
+        binding.btnSave.setOnClickListener {
+            addsGoal()
         }
 
         // Listener one time alarm
@@ -55,6 +65,59 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         binding.btnOnceTime.setOnClickListener(this)
 
         alarmReceiver = AlarmManager()
+    }
+
+    // Connect Add Goal
+    private fun addsGoal() {
+        val inputTitle = binding.etName.text.toString()
+        val inputLocationId = intent.getIntExtra(EXTRA_LOCATION_ID, 0)
+        val inputLocation = binding.etLocation.text.toString()
+        val inputCategory = binding.etCategory.text.toString()
+        val inputBudget = binding.etBudget.text.toString().toInt()
+        val inputDate = binding.etDate.text.toString()
+        val inputNote = binding.etNote.text.toString()
+
+        tokenViewModel.getTokens().observe(this) {
+            val jsonObject = JSONObject()
+            jsonObject.put("title", inputTitle)
+            jsonObject.put("location_id", inputLocationId)
+            jsonObject.put("location_name", inputLocation)
+            jsonObject.put("budget", inputBudget)
+            jsonObject.put("date", inputDate)
+            jsonObject.put("category", inputCategory)
+            jsonObject.put("note", inputNote)
+
+            val jsonObjectString = jsonObject.toString()
+
+            val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
+            val client = ApiConfig.getApiService().addGoal(it.toString(),requestBody)
+
+            client.enqueue(object: Callback<AddGoalResponse> {
+                override fun onResponse(call: Call<AddGoalResponse>, response: Response<AddGoalResponse>) {
+
+                    val responseBody = response.body()
+                    Log.d(TAG, "onResponse: $responseBody")
+
+                    if(response.isSuccessful) {
+
+                        Toast.makeText(this@AddActivity, getString(R.string.add_success), Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@AddActivity, UploadImageActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+                    } else {
+                        Log.e(TAG, "onFailure1: ${response.message()}")
+                        Toast.makeText(this@AddActivity, getString(R.string.add_failed), Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<AddGoalResponse>, t: Throwable) {
+
+                    Log.e(TAG, "onFailure2: ${t.message}")
+                    Toast.makeText(this@AddActivity, getString(R.string.add_failed), Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
     }
 
     // Fill Location
@@ -65,7 +128,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         fillEditText.setText(location)
     }
 
-        private fun setupViewModel() {
+    private fun setupViewModel() {
         tokenViewModel = ViewModelProvider(
             this,
             ViewModelFactory(TokenPreference.getInstance(dataStore))
@@ -105,7 +168,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         // date formatter
         val calendar = Calendar.getInstance()
         calendar.set(year, month, dayOfMonth)
-        val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
         // Set text dari textview once
         binding.tvOnceDate.text = dateFormat.format(calendar.time)
@@ -131,7 +194,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
     private fun showDatePicker() {
         fillEditText = findViewById(R.id.et_date)
         // DatePicker
-        fillEditText.setText(SimpleDateFormat("dd MMMM yyyy").format(System.currentTimeMillis()))
+        fillEditText.setText(SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis()))
 
         val cal = Calendar.getInstance()
 
@@ -168,6 +231,5 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         const val EXTRA_LOCATION_ID = "extra_location_id"
         const val TAG = "add"
     }
-
 
 }

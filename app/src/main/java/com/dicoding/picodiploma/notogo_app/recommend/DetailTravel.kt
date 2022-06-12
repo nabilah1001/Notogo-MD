@@ -16,6 +16,8 @@ class DetailTravel : AppCompatActivity() {
         binding = ActivityDetailTravelBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "Detail Travel"
+
         val dataRecommend: ResultItemRecommendation? = intent.getParcelableExtra("EXTRA_RECOMMEND")
 
         if (dataRecommend != null) {

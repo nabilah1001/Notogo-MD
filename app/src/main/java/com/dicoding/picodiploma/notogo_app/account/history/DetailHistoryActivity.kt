@@ -16,6 +16,8 @@ class DetailHistoryActivity : AppCompatActivity() {
         binding = ActivityDetailHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "Detail History"
+
         val dataGoals: ResultItemHistory? = intent.getParcelableExtra("EXTRA_HISTORY")
 
         if (dataGoals != null) {

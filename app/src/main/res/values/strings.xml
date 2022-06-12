@@ -99,4 +99,8 @@
     <string name="save">Save</string>
     <string name="skip_without_image">Skip without image</string>
     <string name="conservation">Conservation</string>
+    <string name="add_success">Add Successful</string>
+    <string name="add_failed">Added Failed</string>
+    <string name="upload_success">Upload Success</string>
+    <string name="upload_fail">Upload Failed</string>
 </resources>

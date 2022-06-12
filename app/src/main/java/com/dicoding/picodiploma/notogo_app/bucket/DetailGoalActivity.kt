@@ -17,6 +17,8 @@ class DetailGoalActivity : AppCompatActivity() {
         binding = ActivityDetailGoalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.title = "Detail Goal"
+
         val dataGoals = intent.getParcelableExtra<ResultItemGoals>("EXTRA_GOALS") as ResultItemGoals
 
         binding.tvTitleGoal.text = dataGoals.title

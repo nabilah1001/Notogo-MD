@@ -16,6 +16,8 @@ class DetailFavoriteActivity : AppCompatActivity() {
 
         val dataFavorite: ResultItem? = intent.getParcelableExtra("EXTRA_FAVORITE")
 
+        supportActionBar!!.title = "Detail Favorite"
+
         if (dataFavorite != null) {
             binding.tvLocation.text = dataFavorite.location
             binding.tvCategory.text = dataFavorite.category.toString()
