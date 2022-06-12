@@ -4,8 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.picodiploma.notogo_app.account.history.DetailHistoryActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ItemRowGoalBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItemGoals
+import com.dicoding.picodiploma.notogo_app.recommend.DetailTravel
 import com.dicoding.picodiploma.notogo_app.utils.withDateFormat
 
 class ListBucketAdapter(private val result: List<ResultItemGoals>): RecyclerView.Adapter<ListBucketAdapter.ViewHolder>() {
@@ -29,7 +31,10 @@ class ListBucketAdapter(private val result: List<ResultItemGoals>): RecyclerView
                 dateGoal.text = resultItem.date?.withDateFormat()
 
                 binding.root.setOnClickListener {
-                    Intent(binding.root.context, DetailGoalActivity::class.java)
+                    val intent = Intent(binding.root.context, DetailGoalActivity::class.java)
+                    intent.putExtra("EXTRA_GOALS", resultItem)
+
+                    binding.root.context.startActivity(intent)
                 }
             }
         }

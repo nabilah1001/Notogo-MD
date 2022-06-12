@@ -1,6 +1,8 @@
 package com.dicoding.picodiploma.notogo_app.model.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class HistoryResponse(
 
@@ -11,6 +13,7 @@ data class HistoryResponse(
 	val error: Boolean? = null
 )
 
+@Parcelize
 data class ResultItemHistory(
 
 	@field:SerializedName("date")
@@ -45,4 +48,5 @@ data class ResultItemHistory(
 
 	@field:SerializedName("budget")
 	val budget: Int? = null
-)
+): Parcelable
+

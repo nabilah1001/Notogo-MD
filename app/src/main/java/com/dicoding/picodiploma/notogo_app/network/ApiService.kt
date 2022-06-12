@@ -78,16 +78,16 @@ interface ApiService {
 
     // UserPreferences
     @FormUrlEncoded
-    @PUT("profile/preferences")
-    fun putPreferences(
+    @POST("profile/preferences")
+    fun getPreferences(
         @Header("token") token: String,
         @Field("preference_ids") preference_ids: ArrayList<Int>
     ) : Call<PreferencesResponse>
 
     // LikeLocation
     @FormUrlEncoded
-    @PUT("recommendations/like")
-    fun putLike(
+    @POST("recommendations/like")
+    fun getLike(
         @Header("token") token: String,
         @Path("id") id: Int
     ) : Call<LikeResponse>

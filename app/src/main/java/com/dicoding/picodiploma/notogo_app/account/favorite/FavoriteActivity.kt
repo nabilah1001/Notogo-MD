@@ -38,7 +38,6 @@ class FavoriteActivity : AppCompatActivity() {
             }
         }
 
-
         //get favorite
         favoriteViewModel.getListFavorite().observe(this){
             if (it != null) {

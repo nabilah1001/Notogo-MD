@@ -4,10 +4,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dicoding.picodiploma.notogo_app.databinding.ItemRowFavoriteBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItem
-import com.dicoding.picodiploma.notogo_app.model.response.ResultItemGoals
 import com.dicoding.picodiploma.notogo_app.recommend.DetailTravel
+import kotlinx.android.synthetic.main.activity_account.*
 
 class ListFavoriteAdapter(private val result: List<ResultItem>): RecyclerView.Adapter<ListFavoriteAdapter.ViewHolder>() {
 
@@ -27,9 +29,17 @@ class ListFavoriteAdapter(private val result: List<ResultItem>): RecyclerView.Ad
         fun bind(resultItem: ResultItem){
             with(binding){
                 tvLocation.text = resultItem.location
+                Glide.with(itemView)
+                    .load(resultItem.image)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .circleCrop()
+                    .into(ivFavorite)
 
                 binding.root.setOnClickListener {
-                    Intent(binding.root.context, DetailTravel::class.java)
+                    val intent = Intent(binding.root.context, DetailFavoriteActivity::class.java)
+                    intent.putExtra("EXTRA_FAVORITE", resultItem)
+
+                    binding.root.context.startActivity(intent)
                 }
             }
         }

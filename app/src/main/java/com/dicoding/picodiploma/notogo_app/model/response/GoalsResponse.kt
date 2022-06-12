@@ -1,23 +1,26 @@
 package com.dicoding.picodiploma.notogo_app.model.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class GoalsResponse(
 
 	@field:SerializedName("result")
-	val result: ArrayList<ResultItemGoals>,
+	val result: List<ResultItemGoals>,
 
 	@field:SerializedName("error")
 	val error: Boolean? = null
 )
 
+@Parcelize
 data class ResultItemGoals(
 
 	@field:SerializedName("date")
 	val date: String? = null,
 
 	@field:SerializedName("image")
-	val image: Any? = null,
+	val image: String? = null,
 
 	@field:SerializedName("note")
 	val note: String? = null,
@@ -45,4 +48,4 @@ data class ResultItemGoals(
 
 	@field:SerializedName("budget")
 	val budget: Int? = null
-)
+): Parcelable

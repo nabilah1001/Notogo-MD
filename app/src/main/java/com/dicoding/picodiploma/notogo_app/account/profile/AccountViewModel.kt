@@ -19,21 +19,21 @@ class AccountViewModel : ViewModel() {
 
     fun setProfile(token: String) {
         val client = ApiConfig.getApiService().getProfile(token)
-            client.enqueue(object : Callback<ProfileResponse> {
-                override fun onResponse(
-                    call: Call<ProfileResponse>,
-                    response: Response<ProfileResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        profile.postValue(response.body())
-                    }
+        client.enqueue(object : Callback<ProfileResponse> {
+            override fun onResponse(
+                call: Call<ProfileResponse>,
+                response: Response<ProfileResponse>
+            ) {
+                if (response.isSuccessful) {
+                    profile.postValue(response.body())
                 }
+            }
 
-                override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
-                    Log.e(TAG, "onFailure: ${t.message}")
-                }
+            override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: ${t.message}")
+            }
 
-            })
+        })
     }
 
     fun getProfile(): LiveData<ProfileResponse> {

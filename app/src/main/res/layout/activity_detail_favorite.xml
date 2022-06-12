@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.favorite.DetailFavoriteActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imagecategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="imagecategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="275dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/ppsemibold"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imagecategory"
+                tools:text="@string/nametravel" />
+
+            <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/toggle_favorite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/fav_toggle"
+                android:focusable="false"
+                android:foregroundGravity="bottom"
+                android:textOff=""
+                android:textOn=""
+                app:fabSize="normal"
+                app:layout_anchorGravity="bottom|end"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_location"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="288dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/ppmedium"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location"
+                tools:text="Category" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="128dp"
+                android:layout_marginEnd="32dp"
+                app:icon="@drawable/ic_add"
+                android:text="@string/addtomybucket"
+                android:fontFamily="@font/ppmedium"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_filled"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

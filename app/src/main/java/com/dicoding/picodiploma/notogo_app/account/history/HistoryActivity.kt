@@ -12,6 +12,7 @@ import com.dicoding.picodiploma.notogo_app.TokenPreference
 import com.dicoding.picodiploma.notogo_app.TokenViewModel
 import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityHistoryBinding
+import com.dicoding.picodiploma.notogo_app.model.response.ResultItemHistory
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -48,4 +49,5 @@ class HistoryActivity : AppCompatActivity() {
             }
         }
     }
+
 }

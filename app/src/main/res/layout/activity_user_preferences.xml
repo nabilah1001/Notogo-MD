@@ -156,6 +156,23 @@
                 android:text="@string/water_park" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chipConservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:checkedIconEnabled="false"
+                app:chipStrokeColor="@color/black"
+                app:chipStrokeWidth="1dp"
+                app:chipBackgroundColor="@drawable/chip"
+                app:chipCornerRadius="10dp"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="@string/conservation" />
+
+            <com.google.android.material.chip.Chip
                 android:id="@+id/chipCultural"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

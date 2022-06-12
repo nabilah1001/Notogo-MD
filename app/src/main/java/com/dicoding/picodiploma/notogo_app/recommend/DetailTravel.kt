@@ -2,11 +2,31 @@ package com.dicoding.picodiploma.notogo_app.recommend
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.picodiploma.notogo_app.R
+import com.bumptech.glide.Glide
+import com.dicoding.picodiploma.notogo_app.databinding.ActivityDetailTravelBinding
+import com.dicoding.picodiploma.notogo_app.model.response.ResultItem
+import com.dicoding.picodiploma.notogo_app.model.response.ResultItemRecommendation
 
 class DetailTravel : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailTravelBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_travel)
+        binding = ActivityDetailTravelBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val dataRecommend: ResultItemRecommendation? = intent.getParcelableExtra("EXTRA_RECOMMEND")
+
+        if (dataRecommend != null) {
+            binding.tvLocation.text = dataRecommend.location
+            binding.tvCategory.text = dataRecommend.category.toString()
+
+            Glide.with(this)
+                .load(dataRecommend.image)
+                .into(binding.imagecategory)
+
+            binding.tvLocation.text = dataRecommend.location
+        }
     }
 }

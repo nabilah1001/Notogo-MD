@@ -16,7 +16,7 @@ import com.dicoding.picodiploma.notogo_app.TokenViewModel
 import com.dicoding.picodiploma.notogo_app.ViewModelFactory
 import com.dicoding.picodiploma.notogo_app.databinding.FragmentBucketBinding
 
-class BucketFragment : Fragment() {
+class BucketFragment() : Fragment() {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -29,9 +29,9 @@ class BucketFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+
         _binding = FragmentBucketBinding.inflate(LayoutInflater.from(requireActivity()))
-        showLoading(true)
         return binding.root
     }
 
@@ -39,36 +39,25 @@ class BucketFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //TokenViewModel
-        tokenViewModel = ViewModelProvider(
-            this, ViewModelFactory(
-                TokenPreference.getInstance(
-                    requireContext().dataStore)))[TokenViewModel::class.java]
+        tokenViewModel = ViewModelProvider(this, ViewModelFactory(TokenPreference.getInstance(requireContext().dataStore)))[TokenViewModel::class.java]
 
         //set goals
         val bucketViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[BucketViewModel::class.java]
         tokenViewModel.getTokens().observe(viewLifecycleOwner) { token: String? ->
             if (token != null){
                 bucketViewModel.setListGoals(token)
+
             }
         }
 
         //get goals
         bucketViewModel.getListGoals().observe(viewLifecycleOwner){
-            showLoading(false)
             if (it != null) {
                 val adapter = ListBucketAdapter(it)
                 binding.rvGoals.adapter = adapter
                 val layoutManager = LinearLayoutManager(activity)
                 binding.rvGoals.layoutManager = layoutManager
             }
-        }
-    }
-
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.pbBucket.visibility = View.VISIBLE
-        } else {
-            binding.pbBucket.visibility = View.GONE
         }
     }
 

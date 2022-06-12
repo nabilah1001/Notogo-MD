@@ -98,4 +98,5 @@
     <string name="image_preview">Image Preview</string>
     <string name="save">Save</string>
     <string name="skip_without_image">Skip without image</string>
+    <string name="conservation">Conservation</string>
 </resources>
