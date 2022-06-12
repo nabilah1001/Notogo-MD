@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.notogo_app.add
+package com.dicoding.picodiploma.notogo_app.add.category
 
 import android.content.Intent
 import android.os.Bundle

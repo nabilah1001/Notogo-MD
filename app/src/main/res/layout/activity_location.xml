@@ -6,41 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".add.location.LocationActivity">
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/layout_search_location"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:hint="@string/location"-->
-<!--        app:counterEnabled="false"-->
-<!--        app:endIconMode="clear_text"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/btn_location"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:startIconDrawable="@drawable/ic_search">-->
-
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/et_location"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:enabled="false" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/btn_location"-->
-<!--        style="@style/Base.Widget.AppCompat.ImageButton"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_column="1"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:contentDescription="@string/input_location"-->
-<!--        android:src="@drawable/ic_input_location"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/layout_search_location"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/layout_search_location" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_location"
         android:layout_width="0dp"
@@ -68,6 +33,7 @@
         app:layout_constraintStart_toStartOf="@+id/rv_location"
         app:layout_constraintTop_toTopOf="@+id/rv_location"
         tools:visibility="visible" />
+
     <ImageView
         android:id="@+id/opening"
         android:layout_width="119dp"
@@ -92,6 +58,5 @@
         app:layout_constraintStart_toStartOf="@+id/opening"
         app:layout_constraintTop_toBottomOf="@+id/opening"
         tools:visibility="visible"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

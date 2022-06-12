@@ -46,9 +46,9 @@
             app:counterMaxLength="100"
             app:endIconMode="clear_text"
             app:helperTextTextColor="@color/red_1"
-            app:layout_constraintEnd_toEndOf="@+id/btn_image"
-            app:layout_constraintStart_toStartOf="@+id/btn_image"
-            app:layout_constraintTop_toBottomOf="@+id/btn_image">
+            app:layout_constraintEnd_toEndOf="@+id/layout_title"
+            app:layout_constraintStart_toStartOf="@+id/layout_title"
+            app:layout_constraintTop_toBottomOf="@+id/layout_title">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_note"
@@ -83,29 +83,26 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_budget"
+            android:id="@+id/layout_location"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/budget"
+            android:hint="@string/location"
             app:counterEnabled="false"
             app:endIconMode="clear_text"
-            app:errorEnabled="true"
-            app:errorIconDrawable="@drawable/ic_error"
-            app:layout_constraintEnd_toEndOf="@+id/layout_date"
-            app:layout_constraintStart_toStartOf="@+id/layout_date"
-            app:layout_constraintTop_toBottomOf="@+id/layout_date"
-            app:prefixText="Rp. "
-            app:prefixTextColor="@color/blue_1"
-            app:startIconDrawable="@drawable/ic_wallet">
+            app:helperText="*Required"
+            app:helperTextTextColor="@color/red_1"
+            app:layout_constraintEnd_toEndOf="@+id/layout_category"
+            app:layout_constraintStart_toStartOf="@+id/layout_category"
+            app:layout_constraintTop_toBottomOf="@+id/layout_category"
+            app:startIconDrawable="@drawable/ic_location">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_budget"
+                android:id="@+id/et_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="20" />
+                android:enabled="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -131,27 +128,31 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_location"
+            android:id="@+id/layout_budget"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/location"
+            android:hint="@string/budget"
             app:counterEnabled="false"
             app:endIconMode="clear_text"
-            app:helperText="*Required"
-            app:helperTextTextColor="@color/red_1"
-            app:layout_constraintEnd_toEndOf="@+id/layout_category"
-            app:layout_constraintStart_toStartOf="@+id/layout_category"
-            app:layout_constraintTop_toBottomOf="@+id/layout_category"
-            app:startIconDrawable="@drawable/ic_location">
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:layout_constraintEnd_toEndOf="@+id/layout_date"
+            app:layout_constraintStart_toStartOf="@+id/layout_date"
+            app:layout_constraintTop_toBottomOf="@+id/layout_date"
+            app:prefixText="Rp. "
+            app:prefixTextColor="@color/blue_1"
+            app:startIconDrawable="@drawable/ic_wallet">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_location"
+                android:id="@+id/et_budget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="true" />
+                android:inputType="number"
+                android:maxLength="20" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <TableLayout
             android:id="@+id/layout_reminder"
@@ -246,32 +247,6 @@
             app:layout_constraintEnd_toEndOf="@+id/layout_reminder"
             app:layout_constraintStart_toStartOf="@+id/layout_reminder"
             app:layout_constraintTop_toBottomOf="@+id/layout_reminder" />
-
-        <ImageView
-            android:id="@+id/img_preview"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/btn_border"
-            android:contentDescription="Image Preview"
-            android:src="@drawable/ic_image"
-            app:layout_constraintEnd_toEndOf="@id/layout_title"
-            app:layout_constraintStart_toStartOf="@id/layout_title"
-            app:layout_constraintTop_toBottomOf="@id/layout_title" />
-
-        <Button
-            android:id="@+id/btn_image"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white_2"
-            android:text="@string/input_image"
-            android:textColor="@color/blue_1"
-            app:layout_constraintEnd_toEndOf="@+id/layout_title"
-            app:layout_constraintHorizontal_bias="0.284"
-            app:layout_constraintStart_toStartOf="@+id/layout_title"
-            app:layout_constraintTop_toBottomOf="@+id/img_preview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

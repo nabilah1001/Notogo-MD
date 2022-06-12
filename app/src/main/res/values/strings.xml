@@ -93,4 +93,9 @@
     <string name="choose_location">Choose Location</string>
     <string name="find_location">Find Location</string>
     <string name="search_hint">Search Location</string>
+    <string name="button_add_goal">Button Add Goal</string>
+    <string name="create_your_goal">Create Your Goal</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="save">Save</string>
+    <string name="skip_without_image">Skip without image</string>
 </resources>

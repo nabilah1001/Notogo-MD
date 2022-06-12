@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.notogo_app.databinding.ItemRowLocationBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ItemLocation
 
-class LocationAdapter : RecyclerView.Adapter<LocationAdapter.UserViewHolder>(){
+class LocationAdapter: RecyclerView.Adapter<LocationAdapter.UserViewHolder>(){
 
     private val list = ArrayList<ItemLocation>()
     private var onItemClickCallback : OnItemClickCallback? = null

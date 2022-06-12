@@ -9,10 +9,10 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always" />
 
-    <item
-        android:id="@+id/choose_location"
-        android:title="@string/choose_location"
-        android:icon="@drawable/ic_input_location"
-        app:showAsAction="always"/>
+<!--    <item-->
+<!--        android:id="@+id/choose_location"-->
+<!--        android:title="@string/choose_location"-->
+<!--        android:icon="@drawable/ic_input_location"-->
+<!--        app:showAsAction="always"/>-->
 
 </menu>

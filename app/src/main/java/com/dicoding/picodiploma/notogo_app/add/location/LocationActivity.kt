@@ -7,7 +7,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -40,9 +39,9 @@ class LocationActivity : AppCompatActivity() {
                     it.putExtra(AddActivity.EXTRA_LOCATION, data.location)
                     it.putExtra(AddActivity.EXTRA_LOCATION_ID, data.locationId)
                     startActivity(it)
+                    finish()
                 }
             }
-
         })
 
         viewModel = ViewModelProvider(
@@ -56,7 +55,7 @@ class LocationActivity : AppCompatActivity() {
             rvLocation.adapter = adapter
         }
 
-        viewModel.getSearchUsers().observe(this) {
+        viewModel.getSearchLocations().observe(this) {
             if (it != null) {
                 adapter.setList(it)
                 binding.opening.visibility = View.GONE
@@ -81,7 +80,7 @@ class LocationActivity : AppCompatActivity() {
                 searchView.clearFocus()
 
                 binding.pbLocation.visibility = View.VISIBLE
-                viewModel.setSearchUsers(query)
+                viewModel.setSearchLocations(query)
                 binding.opening.visibility = View.GONE
                 binding.tvOpening.visibility = View.GONE
 
@@ -93,18 +92,5 @@ class LocationActivity : AppCompatActivity() {
             }
         })
         return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.choose_location -> {
-                Intent(this, AddActivity::class.java).also{
-                    startActivity(it)
-                }
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-
     }
 }

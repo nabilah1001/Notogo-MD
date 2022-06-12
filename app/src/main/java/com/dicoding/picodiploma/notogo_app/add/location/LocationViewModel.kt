@@ -13,9 +13,9 @@ import retrofit2.Response
 
 class LocationViewModel : ViewModel() {
 
-    val listUsers = MutableLiveData<ArrayList<ItemLocation>>()
+    val listLocations = MutableLiveData<ArrayList<ItemLocation>>()
 
-    fun setSearchUsers(query: String){
+    fun setSearchLocations(query: String){
         val client = ApiConfig.getApiService().getSearchLocations(query)
         client.enqueue(object : Callback<LocationResponse> {
             override fun onResponse(
@@ -23,7 +23,7 @@ class LocationViewModel : ViewModel() {
                 response: Response<LocationResponse>
             ) {
                 if (response.isSuccessful){
-                    listUsers.postValue(response.body()?.result)
+                    listLocations.postValue(response.body()?.result)
                 }
             }
 
@@ -33,7 +33,7 @@ class LocationViewModel : ViewModel() {
         })
     }
 
-    fun getSearchUsers(): LiveData<ArrayList<ItemLocation>> {
-        return listUsers
+    fun getSearchLocations(): LiveData<ArrayList<ItemLocation>> {
+        return listLocations
     }
 }

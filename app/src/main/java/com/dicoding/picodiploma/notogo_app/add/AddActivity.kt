@@ -3,25 +3,23 @@ package com.dicoding.picodiploma.notogo_app.add
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doOnTextChanged
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.dicoding.picodiploma.notogo_app.R
+import androidx.lifecycle.ViewModelProvider
+import com.dicoding.picodiploma.notogo_app.*
+import com.dicoding.picodiploma.notogo_app.add.category.CustomDialogFragment
 import com.dicoding.picodiploma.notogo_app.add.location.LocationActivity
 import com.dicoding.picodiploma.notogo_app.add.utils.AlarmManager
 import com.dicoding.picodiploma.notogo_app.add.utils.DatePickerFragment
 import com.dicoding.picodiploma.notogo_app.add.utils.TimePickerFragment
-import com.dicoding.picodiploma.notogo_app.add.utils.uriToFile
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityAddBinding
+import com.dicoding.picodiploma.notogo_app.model.response.AddGoalResponse
 import com.google.android.material.textfield.TextInputEditText
-import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,39 +28,48 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
     private lateinit var binding: ActivityAddBinding
-    private lateinit var billDateEditText: TextInputEditText
+    private lateinit var tokenViewModel: TokenViewModel
+    private lateinit var fillEditText: TextInputEditText
     private lateinit var alarmReceiver: AlarmManager
-    private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnImage.setOnClickListener {
-            startGallery()
-        }
-
         setupAction()
-
-        binding.etBudget.doOnTextChanged{text, start, before, count ->
-            if(text!!.length > 10){
-                binding.layoutBudget.error = "No More!"
-            } else {
-                binding.layoutBudget.error = null
-            }
-        }
-
-
-        billDateEditText = findViewById(R.id.et_date)
-
+        setupViewModel()
         showDatePicker()
+        fillLocation()
+
+        // val location = intent.getStringExtra(EXTRA_LOCATION)
+        // val locationId = intent.getIntExtra(EXTRA_LOCATION_ID, 0)
+
+        // Create JSON Object
+        binding.btnAddGoal.setOnClickListener {
+
+        }
 
         // Listener one time alarm
         binding.btnOnceDate.setOnClickListener(this)
         binding.btnOnceTime.setOnClickListener(this)
 
         alarmReceiver = AlarmManager()
+    }
+
+    // Fill Location
+    private fun fillLocation() {
+        val location = intent.getStringExtra(EXTRA_LOCATION)
+
+        fillEditText = findViewById(R.id.et_location)
+        fillEditText.setText(location)
+    }
+
+        private fun setupViewModel() {
+        tokenViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(TokenPreference.getInstance(dataStore))
+        )[TokenViewModel::class.java]
     }
 
     // Option Fill Form
@@ -77,26 +84,6 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         // Fill Location
         binding.layoutLocation.setOnClickListener {
             startActivity(Intent(this, LocationActivity::class.java))
-        }
-    }
-
-
-    private fun startGallery() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Choose a Picture")
-        launcherIntentGallery.launch(chooser)
-    }
-
-    private val launcherIntentGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val selectedImg: Uri = result.data?.data as Uri
-            val myFile = uriToFile(selectedImg, this@AddActivity)
-            getFile = myFile
-            binding.imgPreview.setImageURI(selectedImg)
         }
     }
 
@@ -115,7 +102,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
 
     override fun onDialogDateSet(tag: String?, year: Int, month: Int, dayOfMonth: Int) {
 
-        // Siapkan date formatter-nya terlebih dahulu
+        // date formatter
         val calendar = Calendar.getInstance()
         calendar.set(year, month, dayOfMonth)
         val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
@@ -126,7 +113,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
 
     override fun onDialogTimeSet(tag: String?, hourOfDay: Int, minute: Int) {
 
-        // Siapkan time formatter-nya terlebih dahulu
+        // time formatter terlebih dahulu
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
         calendar.set(Calendar.MINUTE, minute)
@@ -142,8 +129,9 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
     }
 
     private fun showDatePicker() {
+        fillEditText = findViewById(R.id.et_date)
         // DatePicker
-        billDateEditText.setText(SimpleDateFormat("dd MMMM yyyy").format(System.currentTimeMillis()))
+        fillEditText.setText(SimpleDateFormat("dd MMMM yyyy").format(System.currentTimeMillis()))
 
         val cal = Calendar.getInstance()
 
@@ -154,10 +142,10 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
 
             val myFormat = "dd MMMM yyyy" // mention the format you need
             val sdf = SimpleDateFormat(myFormat, Locale.US)
-            billDateEditText.setText(sdf.format(cal.time))
+            fillEditText.setText(sdf.format(cal.time))
         }
 
-        billDateEditText.setOnClickListener {
+        fillEditText.setOnClickListener {
 
             Log.d("Clicked", "Interview Date Clicked")
 
@@ -178,6 +166,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         private const val TIME_PICKER_ONCE_TAG = "TimePickerOnce"
         const val EXTRA_LOCATION = "extra_location"
         const val EXTRA_LOCATION_ID = "extra_location_id"
+        const val TAG = "add"
     }
 
 

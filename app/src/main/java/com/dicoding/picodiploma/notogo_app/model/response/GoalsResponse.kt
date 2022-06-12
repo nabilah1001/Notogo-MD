@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class GoalsResponse(
 
 	@field:SerializedName("result")
-	val result: List<ResultItemGoals>,
+	val result: ArrayList<ResultItemGoals>,
 
 	@field:SerializedName("error")
 	val error: Boolean? = null
