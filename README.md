@@ -14,4 +14,4 @@ Achievements Goals Mobile App
 - Glide
 - Retrofit
 
-![app](file:///C:/Users/Haniifah/Pictures/Screenshots/Screenshot%20(293).png)
+![Screenshot (293)](https://user-images.githubusercontent.com/92525360/173280879-b453a9fa-8189-4ecc-a5c5-3a835768ce33.png)
