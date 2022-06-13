@@ -13,3 +13,5 @@ Achievements Goals Mobile App
 - 100% Kotlin
 - Glide
 - Retrofit
+
+![app](file:///C:/Users/Haniifah/Pictures/Screenshots/Screenshot%20(293).png)
