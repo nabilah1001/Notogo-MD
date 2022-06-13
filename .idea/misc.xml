@@ -39,8 +39,6 @@
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/activity_detail_favorite.xml" value="0.10914855072463768" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/activity_detail_history.xml" value="0.10914855072463768" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/activity_fetail_favorite.xml" value="0.10914855072463768" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/fragment_recommend.xml" value="0.18143459915611815" />
-        <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/item_recommend.xml" value="0.1032258064516129" />
         <entry key="..\:/Users/Haniifah/AndroidStudioProjects/Notogo/app/src/main/res/layout/item_row_history.xml" value="0.10914855072463768" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/bg_detail_goal.xml" value="0.153" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/12 - Update Design/Notogo-MD/app/src/main/res/drawable/bg_form.xml" value="0.1" />
@@ -106,9 +104,17 @@
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/17 - BISMILLAH/Notogo-MD/app/src/main/res/layout/item_row_goal.xml" value="0.16304347826086957" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/17 - BISMILLAH/Notogo-MD/app/src/main/res/layout/item_row_location.xml" value="0.1" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/17 - BISMILLAH/Notogo-MD/app/src/main/res/menu/search_action.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1185" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_add.xml" value="0.1796875" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_detail_goal.xml" value="0.1640625" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_detail_history.xml" value="0.22" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_detail_travel.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_food.xml" value="0.1" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_hotel.xml" value="0.1640625" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_transport.xml" value="0.1" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_upload_image.xml" value="0.1796875" />
+        <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/18/Notogo-MD/app/src/main/res/layout/activity_web_view.xml" value="0.1515625" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_add.xml" value="0.1015" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_list.xml" value="0.1015" />
         <entry key="..\:/Users/Nabilah/AndroidStudioProjects/CAPSTONE/6/Notogo-MD/app/src/main/res/drawable/ic_maps.xml" value="0.1015" />

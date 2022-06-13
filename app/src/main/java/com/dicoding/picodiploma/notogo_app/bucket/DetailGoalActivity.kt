@@ -1,9 +1,11 @@
 package com.dicoding.picodiploma.notogo_app.bucket
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.picodiploma.notogo_app.R
-import com.dicoding.picodiploma.notogo_app.databinding.ActivityAccountBinding
+import com.dicoding.picodiploma.notogo_app.bucket.webview.FoodActivity
+import com.dicoding.picodiploma.notogo_app.bucket.webview.HotelActivity
+import com.dicoding.picodiploma.notogo_app.bucket.webview.TransportActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityDetailGoalBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItemGoals
 import com.dicoding.picodiploma.notogo_app.utils.withDateFormat
@@ -11,6 +13,7 @@ import com.dicoding.picodiploma.notogo_app.utils.withDateFormat
 class DetailGoalActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailGoalBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,26 @@ class DetailGoalActivity : AppCompatActivity() {
         binding.tvLocation.text = dataGoals.locationName
         binding.tvDate.text = dataGoals.date?.withDateFormat()
         binding.tvBudget.text = dataGoals.budget.toString()
-    }
 
+        binding.btnLinkTransport.setOnClickListener{
+            val intent = Intent(this@DetailGoalActivity, TransportActivity::class.java)
+            startActivity(intent)
+
+
+        }
+
+        binding.btnLinkFood.setOnClickListener{
+            val intent = Intent(this@DetailGoalActivity, FoodActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        binding.btnLinkHotel.setOnClickListener{
+            val intent = Intent(this@DetailGoalActivity, HotelActivity::class.java)
+            startActivity(intent)
+
+
+        }
+
+    }
 }

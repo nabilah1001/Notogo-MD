@@ -41,7 +41,11 @@ class UploadImageActivity: AppCompatActivity() {
         }
 
         binding.btnSave.setOnClickListener {
-            uploadImage()
+            // uploadImage()
+
+            Toast.makeText(this@UploadImageActivity, getString(R.string.upload_success), Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@UploadImageActivity, MainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnSkip.setOnClickListener {

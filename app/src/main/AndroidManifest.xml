@@ -17,22 +17,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notogo_App"
         tools:targetApi="31">
-
+        <activity
+            android:name=".bucket.webview.HotelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bucket.webview.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bucket.webview.TransportActivity"
+            android:exported="false" />
         <activity
             android:name=".add.UploadImageActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".account.history.DetailHistoryActivity"
             android:exported="false"
-            android:parentActivityName=".account.history.HistoryActivity"/>
+            android:parentActivityName=".account.history.HistoryActivity" />
         <activity
             android:name=".account.favorite.DetailFavoriteActivity"
             android:exported="false"
-            android:parentActivityName=".account.favorite.FavoriteActivity"/>
+            android:parentActivityName=".account.favorite.FavoriteActivity" />
         <activity
             android:name=".account.favorite.FavoriteActivity"
             android:exported="false"
-            android:parentActivityName=".account.profile.AccountActivity"/>
+            android:parentActivityName=".account.profile.AccountActivity" />
         <activity
             android:name=".add.location.LocationActivity"
             android:exported="false"
@@ -40,7 +48,7 @@
         <activity
             android:name=".bucket.DetailGoalActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".authentification.Onboarding"
             android:exported="false" />
@@ -51,14 +59,14 @@
         <activity
             android:name=".account.history.HistoryActivity"
             android:exported="false"
-            android:parentActivityName=".account.profile.AccountActivity"/>
+            android:parentActivityName=".account.profile.AccountActivity" />
         <activity
             android:name=".account.profile.AccountActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".recommend.DetailTravel"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".authentification.UserPreferencesActivity"
             android:exported="false" />
