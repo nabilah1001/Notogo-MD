@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Notogo_App"
         tools:targetApi="31">
         <activity
+            android:name=".recommend.RecommendationDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".bucket.webview.HotelActivity"
             android:exported="false" />
         <activity

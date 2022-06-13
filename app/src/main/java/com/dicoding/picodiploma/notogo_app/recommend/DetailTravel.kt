@@ -1,8 +1,11 @@
 package com.dicoding.picodiploma.notogo_app.recommend
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.dicoding.picodiploma.notogo_app.add.AddActivity
+import com.dicoding.picodiploma.notogo_app.authentification.LoginActivity
 import com.dicoding.picodiploma.notogo_app.databinding.ActivityDetailTravelBinding
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItem
 import com.dicoding.picodiploma.notogo_app.model.response.ResultItemRecommendation
@@ -29,6 +32,10 @@ class DetailTravel : AppCompatActivity() {
                 .into(binding.imagecategory)
 
             binding.tvLocation.text = dataRecommend.location
+        }
+
+        binding.loginButton.setOnClickListener {
+            startActivity(Intent(this, AddActivity::class.java))
         }
     }
 }

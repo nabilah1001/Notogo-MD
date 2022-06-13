@@ -49,8 +49,8 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
 
         setupAction()
         setupViewModel()
-        showDatePicker()
         fillLocation()
+        showDatePicker()
 
         // val location = intent.getStringExtra(EXTRA_LOCATION)
         // val locationId = intent.getIntExtra(EXTRA_LOCATION_ID, 0)
@@ -65,6 +65,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
         binding.btnOnceTime.setOnClickListener(this)
 
         alarmReceiver = AlarmManager()
+
     }
 
     // Connect Add Goal
@@ -123,7 +124,6 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
     // Fill Location
     private fun fillLocation() {
         val location = intent.getStringExtra(EXTRA_LOCATION)
-
         fillEditText = findViewById(R.id.et_location)
         fillEditText.setText(location)
     }
@@ -203,7 +203,7 @@ class AddActivity: AppCompatActivity(), View.OnClickListener, DatePickerFragment
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            val myFormat = "dd MMMM yyyy" // mention the format you need
+            val myFormat = "yyyy-MM-dd" // mention the format you need
             val sdf = SimpleDateFormat(myFormat, Locale.US)
             fillEditText.setText(sdf.format(cal.time))
         }
