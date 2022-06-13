@@ -1,7 +1,7 @@
 # Notogo-MD
 Achievements Goals Mobile App
 
-# Main Feature
+**Main Feature**
 - Login
 - Register
 - User Preferences
