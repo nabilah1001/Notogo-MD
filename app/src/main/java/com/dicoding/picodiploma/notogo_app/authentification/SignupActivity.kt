@@ -88,7 +88,6 @@ class SignupActivity : AppCompatActivity() {
                 Log.d(TAG, "onResponse: $responseBody")
 
                 if(response.isSuccessful && responseBody?.message == "Account created") {
-//                    tokenViewModel.saveTokens(UserModel(responseBody.token, true))
                     val token = response.body()?.token.toString()
                     tokenViewModel.saveTokens(token)
                     Toast.makeText(this@SignupActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()

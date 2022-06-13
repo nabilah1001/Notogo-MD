@@ -88,7 +88,7 @@ interface ApiService {
     @POST("profile/preferences")
     fun getPreferences(
         @Header("token") token: String,
-        @Field("preference_ids") preference_ids: ArrayList<Int>
+        @Field("preference_ids") preference_ids: Array<Int>
     ) : Call<PreferencesResponse>
 
     // Like Location
